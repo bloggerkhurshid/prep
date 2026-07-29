@@ -103,7 +103,7 @@ export default function App() {
     )
   );
 
-  const categories = ['All', 'Saved', ...new Set(documentsData.map(d => d.category))];
+  const categories = ['All', ...new Set(documentsData.map(d => d.category))];
 
   const filteredQna = allQna.filter(item => {
     let matchesCat = true;
