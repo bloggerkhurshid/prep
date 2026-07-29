@@ -115,11 +115,15 @@ export default function App() {
               <Flame size={22} className="fill-amber-300/30 stroke-[2.2]" />
             </div>
             <div className="flex flex-col">
-              <div className="flex items-center space-x-1.5 font-extrabold text-base sm:text-lg tracking-tight uppercase leading-none text-neutral-900 dark:text-white">
+              <div className={`flex items-center space-x-1.5 font-extrabold text-base sm:text-lg tracking-tight uppercase leading-none ${
+                isDarkMode ? 'text-white' : 'text-neutral-900'
+              }`}>
                 <span>Interview</span>
                 <span>Prep</span>
               </div>
-              <span className="text-[9px] font-semibold tracking-widest uppercase text-rose-600 dark:text-white pt-0.5">
+              <span className={`text-[9px] font-semibold tracking-widest uppercase pt-0.5 ${
+                isDarkMode ? 'text-white' : 'text-rose-600'
+              }`}>
                 by khurshidalom
               </span>
             </div>
