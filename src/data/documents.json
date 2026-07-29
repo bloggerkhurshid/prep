@@ -63,6 +63,18 @@
           {
             "question": "What is CORS (Cross-Origin Resource Sharing) & How to Fix CORS Errors?",
             "answer": "CORS is a browser security mechanism restricting web pages from making API requests to a different domain/origin than the one that served the web page.\n\n**Fixing CORS:**\n- Add HTTP Response Headers on backend server: Access-Control-Allow-Origin: * or explicit origin domain.\n- Use preflight OPTIONS request handling.\n- In development, setup a local proxy server in Vite (vite.config.js server.proxy)."
+          },
+          {
+            "question": "What is Web Security: XSS (Cross-Site Scripting) vs CSRF (Cross-Site Request Forgery)?",
+            "answer": "XSS (Cross-Site Scripting):\n- Attackers inject malicious scripts into trusted websites.\n- **Prevention:** Sanitize user input, set `Content-Security-Policy` (CSP), use React auto-escaping.\n\nCSRF (Cross-Site Request Forgery):\n- Attackers trick authenticated users into executing unintended HTTP actions.\n- **Prevention:** Anti-CSRF tokens, `SameSite=Strict` or `SameSite=Lax` cookies."
+          },
+          {
+            "question": "What is Progressive Web Apps (PWA) & Service Workers?",
+            "answer": "PWAs deliver app-like experiences on the web.\n\n**Core Pillars:**\n1. **Service Workers:** Background scripts intercepting network requests, caching assets for offline capability.\n2. **Web App Manifest:** JSON file enabling installability on home screens.\n3. **HTTPS:** Required for secure service worker scope."
+          },
+          {
+            "question": "What is HTTP/1.1 vs HTTP/2 vs HTTP/3?",
+            "answer": "HTTP/1.1:\n- Single request-response per TCP connection (Head-of-Line blocking).\n\nHTTP/2:\n- Multiplexing over single TCP connection, header compression (HPACK), server push.\n\nHTTP/3:\n- Built on QUIC protocol over UDP instead of TCP, resolving packet loss blocking and speeding up connection handshake."
           }
         ]
       },
@@ -396,6 +408,26 @@
           {
             "question": "What is Function Composition & Pipe in JavaScript?",
             "answer": "Function composition is a mathematical concept where the output of one function becomes the input of another f(g(x)).\n\n**Compose vs Pipe:**\n- **Compose:** Executes functions from right to left.\n- **Pipe:** Executes functions from left to right."
+          },
+          {
+            "question": "What is Memory Leaks in JavaScript and How to Prevent Them?",
+            "answer": "Memory leaks occur when objects are no longer needed by the application but are still referenced in memory.\n\n**Common Causes & Fixes:**\n1. **Accidental Global Variables:** Always use strict mode or let/const.\n2. **Forgotten Timers / Callbacks:** Clear `setInterval` or `setTimeout` when components unmount.\n3. **DOM References:** Remove event listeners (`removeEventListener`) when DOM elements are removed.\n4. **Closures:** Avoid holding unnecessary large references inside long-lived closures."
+          },
+          {
+            "question": "What is WeakMap and WeakSet vs Map and Set in JavaScript?",
+            "answer": "Map & Set:\n- Hold strong references to keys and values, preventing garbage collection.\n\nWeakMap & WeakSet:\n- Keys must be objects only.\n- Hold **weak references** to key objects, allowing them to be garbage-collected if no other reference exists.\n- Not enumerable (cannot iterate over keys or size)."
+          },
+          {
+            "question": "What is Generator Functions & Yield Keyword?",
+            "answer": "Generator functions can pause execution and resume later, returning an iterator object.\n\n**Syntax:**\n- Defined using `function*` syntax and `yield` keyword.\n- `const gen = myGen(); gen.next()` returns `{ value, done }`.\n- Useful for custom iterators, handling infinite data streams, and managing async flows."
+          },
+          {
+            "question": "What is Object.freeze() vs Object.seal() vs Object.preventExtensions()?",
+            "answer": "1. **Object.freeze():** Completely immutable. Cannot add, delete, or modify properties.\n2. **Object.seal():** Cannot add or delete properties, but CAN modify existing property values.\n3. **Object.preventExtensions():** Cannot add new properties, but CAN delete or modify existing properties."
+          },
+          {
+            "question": "What is Module System: CommonJS (CJS) vs ES Modules (ESM)?",
+            "answer": "CommonJS (CJS):\n- Used natively in traditional Node.js (`require()` and `module.exports`).\n- Synchronous loading at runtime.\n\nES Modules (ESM):\n- Standard browser & modern JS format (`import` and `export`).\n- Asynchronous loading at compile/parse time, supporting Tree-Shaking."
           }
         ]
       }
@@ -585,6 +617,26 @@
           {
             "question": "What is Server Components (RSC) vs Client Components in React?",
             "answer": "Server Components (RSC):\n- Render exclusively on the server.\n- Zero bundle size sent to client, direct database access, secure credentials.\n\nClient Components:\n- Render on client (or SSR hydrated).\n- Support interactivity, state (useState, useEffect), event listeners, and browser APIs."
+          },
+          {
+            "question": "What is Error Boundaries in React and how to implement one?",
+            "answer": "Error Boundaries are React components that catch JavaScript errors anywhere in their child component tree, log those errors, and display a fallback UI instead of crashing the whole component tree.\n\n**Implementation:**\nMust be a Class Component implementing `static getDerivedStateFromError()` or `componentDidCatch()` lifecycle methods."
+          },
+          {
+            "question": "What is Code Splitting, React.lazy, and Suspense?",
+            "answer": "Code Splitting breaks down JavaScript bundles into smaller chunks loaded on demand.\n\n**Implementation:**\n- `const DynamicComponent = React.lazy(() => import(\"./DynamicComponent\"));`\n- Wrap dynamic components in `<Suspense fallback={<LoadingSpinner />}>` to render UI while loading."
+          },
+          {
+            "question": "What is the difference between useLayoutEffect and useEffect?",
+            "answer": "useEffect:\n- Runs **asynchronously** after browser paint. Ideal for data fetching, event subscriptions, and timer setups.\n\nuseLayoutEffect:\n- Runs **synchronously** immediately after DOM mutations but BEFORE the browser repaints the screen.\n- Use only when measuring DOM elements or preventing visual flicker."
+          },
+          {
+            "question": "What is Context API vs Redux Toolkit (RTK)?",
+            "answer": "Context API:\n- Built into React for passing low-frequency global state (themes, user auth, locale) without prop drilling.\n- Can cause performance issues if state updates frequently as all consuming components re-render.\n\nRedux Toolkit (RTK):\n- External state management framework built for complex, high-frequency global state with devtools time-travel debugging, selectors, and middleware."
+          },
+          {
+            "question": "What is Component Lifecycle in React (Class Lifecycle vs Hooks equivalents)?",
+            "answer": "Class Lifecycles & Hook Equivalents:\n- `componentDidMount` -> `useEffect(() => {}, [])`\n- `componentDidUpdate` -> `useEffect(() => {}, [deps])`\n- `componentWillUnmount` -> `useEffect(() => { return () => cleanup(); }, [])`"
           }
         ]
       }
