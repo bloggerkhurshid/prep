@@ -4,12 +4,13 @@ import {
   Search, 
   Sun, 
   Moon,
-  Code2
+  Code2,
+  Sparkles
 } from 'lucide-react';
 
 export default function App() {
   // Navigation & Dark Mode
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   // Q&A Filter & Reveal States
   const [searchQuery, setSearchQuery] = useState('');
@@ -38,7 +39,7 @@ export default function App() {
           return <strong key={pIdx} className="font-bold border-b border-current pb-0.5">{part.slice(2, -2)}</strong>;
         }
         if (/^(?:[A-Za-z0-9\s,–-]+:|\d+\.\s+[A-Za-z0-9\s,–-]+:)$/.test(part)) {
-          return <strong key={pIdx} className="font-semibold block mt-2 text-sm uppercase tracking-wide opacity-90">{part}</strong>;
+          return <strong key={pIdx} className="font-semibold block mt-2 text-xs uppercase tracking-widest opacity-90">{part}</strong>;
         }
         return <span key={pIdx}>{part}</span>;
       });
@@ -84,30 +85,47 @@ export default function App() {
   });
 
   return (
-    <div className={`min-h-screen transition-colors duration-200 font-["Literata",Georgia,serif] flex flex-col ${
-      isDarkMode ? 'bg-black text-neutral-200' : 'bg-white text-neutral-900'
+    <div className={`min-h-screen transition-colors duration-300 font-["Plus_Jakarta_Sans",sans-serif] flex flex-col relative overflow-x-hidden ${
+      isDarkMode 
+        ? 'bg-[#0b0c10] text-neutral-100' 
+        : 'bg-[#f4f6f9] text-neutral-900'
     }`}>
-      
-      {/* Header Nav */}
-      <header className={`sticky top-0 z-30 border-b backdrop-blur-md ${
-        isDarkMode ? 'bg-black/90 border-neutral-800' : 'bg-white/90 border-neutral-200'
-      }`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between">
+
+      {/* Vibrant Ambient Glow Orbs for Glassmorphism Reflections */}
+      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+        <div className={`absolute -top-40 -left-40 w-96 h-96 rounded-full blur-3xl opacity-25 transition-all duration-700 ${
+          isDarkMode ? 'bg-indigo-600' : 'bg-blue-400'
+        }`} />
+        <div className={`absolute top-1/3 -right-40 w-96 h-96 rounded-full blur-3xl opacity-20 transition-all duration-700 ${
+          isDarkMode ? 'bg-purple-600' : 'bg-indigo-300'
+        }`} />
+        <div className={`absolute -bottom-40 left-1/3 w-96 h-96 rounded-full blur-3xl opacity-20 transition-all duration-700 ${
+          isDarkMode ? 'bg-cyan-600' : 'bg-sky-300'
+        }`} />
+      </div>
+
+      {/* Glassmorphism Header Nav */}
+      <header className="sticky top-0 z-30 transition-all duration-300 px-4 sm:px-6 py-3.5">
+        <div className={`max-w-7xl mx-auto rounded-2xl px-5 py-3 flex items-center justify-between transition-all ${
+          isDarkMode ? 'glass-panel-dark' : 'glass-panel-light'
+        }`}>
           
           {/* Logo / Title H1 for SEO */}
-          <h1 className="flex items-center space-x-2.5 font-sans">
-            <div className={`p-1.5 rounded-lg border ${
-              isDarkMode ? 'border-neutral-200 bg-white text-black' : 'border-neutral-900 bg-black text-white'
+          <h1 className="flex items-center space-x-3 font-sans">
+            <div className={`p-2 rounded-xl border transition-all ${
+              isDarkMode 
+                ? 'border-white/20 bg-white text-black shadow-lg shadow-white/5' 
+                : 'border-black/10 bg-black text-white shadow-lg shadow-black/10'
             }`}>
               <Code2 size={20} className="stroke-[2.5]" />
             </div>
             <div className="flex items-center space-x-2">
-              <span className={`px-2.5 py-0.5 rounded font-black text-xl tracking-wider uppercase ${
+              <span className={`px-2.5 py-0.5 rounded-lg font-black text-lg sm:text-xl tracking-wider uppercase transition-all ${
                 isDarkMode ? 'bg-white text-black' : 'bg-black text-white'
               }`}>
                 PREP
               </span>
-              <span className="text-[9px] sm:text-[10px] font-normal tracking-widest uppercase opacity-60">
+              <span className="text-[9px] sm:text-[10px] font-semibold tracking-widest uppercase opacity-60">
                 by khurshid
               </span>
             </div>
@@ -117,12 +135,12 @@ export default function App() {
           <button
             onClick={() => setIsDarkMode(!isDarkMode)}
             aria-label="Toggle Dark Mode"
-            className={`p-2 rounded-md transition-colors border ${
+            className={`p-2.5 rounded-xl transition-all border ${
               isDarkMode 
-                ? 'border-neutral-800 hover:bg-neutral-900 text-white' 
-                : 'border-neutral-200 hover:bg-neutral-100 text-black'
+                ? 'border-white/10 bg-white/5 hover:bg-white/15 text-white' 
+                : 'border-black/10 bg-black/5 hover:bg-black/10 text-black'
             }`}
-            title="Toggle Dark Mode"
+            title="Toggle Theme"
           >
             {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}
           </button>
@@ -130,13 +148,15 @@ export default function App() {
         </div>
       </header>
 
-      {/* Main Combined Page View */}
-      <main className="flex-1 flex flex-col max-w-7xl w-full mx-auto px-4 sm:px-6 py-8 font-sans space-y-6">
+      {/* Main Combined Glass Page View */}
+      <main className="flex-1 flex flex-col max-w-7xl w-full mx-auto px-4 sm:px-6 py-6 font-sans space-y-6 z-10">
         
         {/* Search & Category Filter Header Bar */}
-        <div className="flex flex-col md:flex-row gap-3 justify-between items-center pb-2 border-b border-neutral-500/10">
+        <div className={`p-4 sm:p-5 rounded-2xl transition-all flex flex-col md:flex-row gap-4 justify-between items-center ${
+          isDarkMode ? 'glass-panel-dark' : 'glass-panel-light'
+        }`}>
           <div className="relative w-full md:w-80">
-            <Search size={15} className="absolute left-3 top-2.5 opacity-40" />
+            <Search size={16} className="absolute left-3.5 top-3 opacity-40" />
             <input
               id="search-input"
               aria-label="Search questions and concepts"
@@ -144,22 +164,24 @@ export default function App() {
               placeholder="Search concepts & questions..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className={`w-full pl-9 pr-3 py-1.5 text-sm bg-transparent border rounded focus:outline-none ${
-                isDarkMode ? 'border-neutral-800 focus:border-neutral-500' : 'border-neutral-300 focus:border-black'
+              className={`w-full pl-10 pr-4 py-2 text-sm bg-transparent border rounded-xl focus:outline-none transition-all ${
+                isDarkMode 
+                  ? 'border-white/10 focus:border-white/30 bg-black/20 text-white placeholder-neutral-400' 
+                  : 'border-black/10 focus:border-black/30 bg-white/40 text-black placeholder-neutral-500'
               }`}
             />
           </div>
 
           {/* Category Filter Pills */}
-          <div className="flex items-center space-x-1 overflow-x-auto w-full md:w-auto pb-1 md:pb-0">
+          <div className="flex items-center space-x-1.5 overflow-x-auto w-full md:w-auto pb-1 md:pb-0">
             {categories.map(cat => (
               <button
                 key={cat}
                 onClick={() => setCategoryFilter(cat)}
-                className={`px-3 py-1 rounded text-xs transition-all whitespace-nowrap ${
+                className={`px-3.5 py-1.5 rounded-xl text-xs transition-all whitespace-nowrap font-medium ${
                   categoryFilter === cat 
-                    ? (isDarkMode ? 'bg-white text-black font-semibold' : 'bg-black text-white font-semibold') 
-                    : 'opacity-60 hover:opacity-100'
+                    ? (isDarkMode ? 'bg-white text-black font-semibold shadow-md' : 'bg-black text-white font-semibold shadow-md') 
+                    : (isDarkMode ? 'bg-white/5 hover:bg-white/10 opacity-70 hover:opacity-100' : 'bg-black/5 hover:bg-black/10 opacity-70 hover:opacity-100')
                 }`}
               >
                 {cat}
@@ -168,8 +190,8 @@ export default function App() {
           </div>
         </div>
 
-        {/* Unified Cards Stream (Click to Expand Answers) */}
-        <div className="space-y-3">
+        {/* Glassmorphism Cards Stream */}
+        <div className="space-y-4">
           {filteredQna.map((qnaItem) => {
             const isRevealed = revealedAnswers[qnaItem.id];
 
@@ -177,26 +199,26 @@ export default function App() {
               <div 
                 key={qnaItem.id}
                 onClick={() => toggleAnswer(qnaItem.id)}
-                className={`p-4 rounded border transition-all cursor-pointer ${
+                className={`p-5 sm:p-6 rounded-2xl transition-all duration-300 cursor-pointer ${
                   isDarkMode 
-                    ? 'border-neutral-800 bg-neutral-950 hover:border-neutral-700' 
-                    : 'border-neutral-200 bg-white hover:border-neutral-400'
+                    ? 'glass-card-dark hover:border-white/20 hover:shadow-lg' 
+                    : 'glass-card-light hover:border-black/20 hover:shadow-md'
                 }`}
               >
                 <div className="flex items-start justify-between gap-4">
                   <div>
-                    <span className="text-[9px] uppercase font-bold tracking-widest opacity-40 block">
+                    <span className="text-[10px] uppercase font-bold tracking-widest opacity-50 block mb-1">
                       {qnaItem.category} • {qnaItem.docTitle}
                     </span>
-                    <h3 className="font-medium text-base pt-0.5">
+                    <h3 className="font-semibold text-base sm:text-lg leading-snug">
                       {qnaItem.question}
                     </h3>
                   </div>
                 </div>
 
                 {isRevealed && (
-                  <div className={`mt-3 pt-3 border-t text-sm leading-relaxed ${
-                    isDarkMode ? 'border-neutral-800 text-neutral-300' : 'border-neutral-200 text-neutral-800'
+                  <div className={`mt-4 pt-4 border-t text-sm leading-relaxed transition-all ${
+                    isDarkMode ? 'border-white/10 text-neutral-200' : 'border-black/10 text-neutral-800'
                   }`}>
                     {renderFormattedText(qnaItem.answer)}
                   </div>
@@ -204,21 +226,25 @@ export default function App() {
               </div>
             );
           })}
-          </div>
+        </div>
 
-        </main>
+      </main>
 
-      {/* Clean Minimal Footer */}
-      <footer className={`border-t py-6 mt-12 text-xs font-sans ${
-        isDarkMode ? 'border-neutral-800 text-neutral-400' : 'border-neutral-200 text-neutral-600'
+      {/* Glassmorphism Footer */}
+      <footer className={`border-t py-6 mt-12 text-xs font-sans z-10 transition-all ${
+        isDarkMode ? 'border-white/10 text-neutral-400' : 'border-black/10 text-neutral-600'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <div className="flex items-center space-x-1.5 uppercase tracking-wide">
-            <span className="font-bold">PREP</span>
-            <span className="opacity-50">BY KHURSHID</span>
+          <div className="flex items-center space-x-2 uppercase tracking-wide">
+            <span className={`px-2 py-0.5 rounded text-[10px] font-black ${
+              isDarkMode ? 'bg-white text-black' : 'bg-black text-white'
+            }`}>
+              PREP
+            </span>
+            <span className="text-[10px] opacity-60">BY KHURSHID</span>
           </div>
           <p className="opacity-80">
-            Copyright © <a href="https://khurshidalom.in" target="_blank" rel="noopener noreferrer" className="underline hover:opacity-100 transition-opacity">Khurshid Alom</a>
+            Copyright © <a href="https://khurshidalom.in" target="_blank" rel="noopener noreferrer" className="underline hover:opacity-100 transition-opacity font-medium">Khurshid Alom</a>
           </p>
         </div>
       </footer>
