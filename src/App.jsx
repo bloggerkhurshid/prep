@@ -85,9 +85,15 @@ export default function App() {
             }`}>
               <Code2 size={20} className="stroke-[2.5]" />
             </div>
-            <div className="flex items-baseline space-x-1.5 uppercase">
-              <span className="font-bold text-2xl sm:text-3xl tracking-tight">Prep</span>
-              <span className="text-xs font-normal opacity-60">by khurshid</span>
+            <div className="flex items-center space-x-2">
+              <span className={`px-2.5 py-0.5 rounded font-black text-xl tracking-wider uppercase ${
+                isDarkMode ? 'bg-white text-black' : 'bg-black text-white'
+              }`}>
+                PREP
+              </span>
+              <span className="text-xs font-semibold tracking-widest uppercase opacity-70">
+                by khurshid
+              </span>
             </div>
           </h1>
 
