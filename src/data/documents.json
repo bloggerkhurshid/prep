@@ -912,7 +912,7 @@
             "answer": "Higher order component is a special component it take input as a existing component return as a new component.\nMailny using the Reusable purpose. This is classbase component\nimport React from 'react';\nconst withLogger = (WrappedComponent) => {\nclass WithLogger extends React.Component {\ncomponentDidMount() {\nconsole.log('Component mounted');\n}\ncomponentWillUnmount() {\nconsole.log('Component unmounted');\n}\nrender() {\nreturn <WrappedComponent {...this.props} />;\n}\n}\nreturn WithLogger;\n};\n// Usage\nclass MyComponent extends React.Component {\nrender() {\nreturn <div>Hello, World!</div>;\n}\n}\nconst MyComponentWithLogger = withLogger(MyComponent);\nexport default MyComponentWithLogger;"
           },
           {
-            "question": "What is useEffect & How does it work?",
+            "question": "Explain the useEffect?",
             "answer": "useEffect is a core React Hook used to manage side effects in functional components (such as data fetching, subscriptions, DOM manipulation, and timers).\n\n**Usage & Dependency Behaviors:**\n1. **No Dependency Array (`useEffect(() => {})`):** Runs after initial render and after EVERY single component re-render.\n2. **Empty Dependency Array (`useEffect(() => {}, [])`):** Runs ONLY ONCE after the initial component mount (equivalent to `componentDidMount`).\n3. **With Dependencies (`useEffect(() => {}, [count])`):** Runs after mount and whenever any specified dependency variable changes (equivalent to `componentDidUpdate`).\n4. **Cleanup Function (`useEffect(() => { return () => cleanup(); }, [])`):** Returned function executes before unmounting or before re-running the effect (equivalent to `componentWillUnmount`)."
           },
           {
