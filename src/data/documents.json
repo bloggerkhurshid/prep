@@ -1,0 +1,887 @@
+[
+  {
+    "id": "html-css-bootstrap",
+    "title": "HTML, CSS & Bootstrap Guide",
+    "category": "HTML & CSS",
+    "sections": [
+      {
+        "title": "Html Concepts",
+        "content": [],
+        "qna": [
+          {
+            "question": "What is doctype?",
+            "answer": "Doctype provides a version of html 5"
+          },
+          {
+            "question": "What is meta tag ?",
+            "answer": "Meta tag defines the Metadata about the html Document."
+          },
+          {
+            "question": "What is view port?",
+            "answer": "The viewport is the user's visible area of a web page. It varies with the device - it will be smaller on a mobile phone than on a computer screen. You should include the following <meta> element in all your web pages: <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"
+          },
+          {
+            "question": "Difference between inline and block tags?",
+            "answer": "Block elements cover space from left to right as for as it can go. Inline Elements only cover the space as bounded by the tags in the html element. Block elements have top and bottom margins. Inline Elements don't have top and bottom margin.\nInline tags: span,b,I,img,mark\nBlocklevel tags: div,p, all heading tags(h1,h2,h3,h4,h5,h6)"
+          },
+          {
+            "question": "What is semantic tags?",
+            "answer": "The html semantics refers to the tags that provide meaning to an html page rather than just presentation. It Makes html more comprehensible by better defining the different sections and layout of webpages.\nDeveloper understanding purpose\nAnd SEO\nEg. header, footer, form, table, article, aside.\nNon symantics => Div p , span, ul,li,ol,li, h1,h2"
+          },
+          {
+            "question": "What is element and tag difference?",
+            "answer": "Html Tag : html tag starts with < and\nend with >\nHtml element: whatever written within a html tag are html element."
+          },
+          {
+            "question": "What is attribute?",
+            "answer": "All html elements can have attributes\nAttributes Provides Additional Information about element\nAttributes are always specified in the start tag\nAttributes usually come in Name/Value pairs like, Name:\"value\"."
+          },
+          {
+            "question": "What is web worker?",
+            "answer": "A web worker is a JavaScript that runs in the background, independently\nof other scripts, without affecting the performance of the page"
+          },
+          {
+            "question": "Difference between html and html5?",
+            "answer": "Html:\nLanguage in HTML does not have support for video and audio\nThe HTML browser uses cache memory as temporary storage.\nIn HTML4, vector graphics are not supported.\nUses cookies to store data.\nIt not supported the geolocation(MAP)\nHtml5:\nHTML5 supports both video and audio.\nHTML5 has the storage options like:application cache, SQL database, and web storage.\nIn HTML5, vector graphics are supported by default.\nUses local storage instead of cookies\nHtml5 supports the geolocation(Map)\nDrag and drop,"
+          },
+          {
+            "question": "What is web storage?",
+            "answer": "Web storage in the sence local storage and session storage\nLocal Storage: when ever using the local storage when the browser is close it will not expire the session. 5 to 10mb\nSession Storage: when ever using the Session storage when the browser is close it will expire the session. upto 5mb\nIframe : page with in the webpage we can create using the iframe tag"
+          },
+          {
+            "question": "DIfference between div vs span?",
+            "answer": "Div is a block level tag, it will occupy the entire width it will display new row.\nSpan is a inline tag it will occupy particular text only it will display side by side"
+          }
+        ]
+      },
+      {
+        "title": "Css Concepts",
+        "content": [],
+        "qna": [
+          {
+            "question": "What is Css?",
+            "answer": "CSS stands for Cascading Style Sheet. It is a popular styling language which is used with HTML to design websites. It can also be used with any XML documents including plain XML, SVG."
+          },
+          {
+            "question": "What is Box Model?",
+            "answer": "The CSS box model is used to define the design and layout of elements of CSS.\nThe elements are:\nMargin - It removes the area around the border. It is transparent.\nBorder - It represents the area around the padding\nPadding - It removes the area around the content. It is transparent.\nContent - It represents the content like text, images, etc."
+          },
+          {
+            "question": "How many ways to create a styles in css?",
+            "answer": "We can Create 3 ways\nInline Css --> it will write the with in the tag\nInternal Css -->it will write the head tag in top of the file\nExternal Css -- it will create the new file like style.css their it will write the css"
+          },
+          {
+            "question": "What is position properties?",
+            "answer": "positions properties\n1. static -> Default value. Elements render in order, as they appear in the document flow\n2.relative -> The element is positioned relative to its normal position, so \"left:20px\" adds 20 pixels to the element's LEFT\n3.absolute-> The element is positioned relative to its first positioned (not static) ancestor element\n4.sticky-> The element is positioned based on the user's scroll position\n5.fixed -> The element is positioned relative to the browser window"
+          },
+          {
+            "question": "What is flex and grid box?",
+            "answer": "flex we can create single dimentional layout row wise or colum wise\nProperties are -> display:flex, flex-direction :row, flex-direction:colum,\nflex-direction:row-riverse, flex-direction:colum-riverse\ngrid -> it will create the two dimentional lay out like row wise and colum wise"
+          },
+          {
+            "question": "Visibility hide and display none?",
+            "answer": "visibility hide means it will not display the text but it will occupies space.\ndisplay none means it will not display the text as well as it will not occupies the space also."
+          },
+          {
+            "question": "Z-index?",
+            "answer": "Z-index is a CSS property that defines the order of overlapping HTML elements. Elements with a higher index will be placed on top of elements with a lower index\nZ-index more top appear\nZ-index less below display"
+          },
+          {
+            "question": "Float Properties?",
+            "answer": "Float properties are"
+          },
+          {
+            "question": "Float left 2.float right?",
+            "answer": "Float left display the text left side\nFloat right display the text right side"
+          },
+          {
+            "question": "Jestify properties?",
+            "answer": "Justify properties are\nJustify-content: space-around\n: space-between\n: space-evenly"
+          },
+          {
+            "question": "How to create a text in center horizontal and vertically?",
+            "answer": "Horizontally and vertically center properties are\nDisplay:flex;\nJustify-content:center;\nAlign-items:center;\nHeight:100vh;"
+          },
+          {
+            "question": "Psudo classes and psudo element?",
+            "answer": "Psudo class are :hover, :active, :visited, :link;\nPsudo elements are -> ex p::first-letter, p::first-line\nP::before, p::after, ::marker, ::selection"
+          },
+          {
+            "question": "What is media query?",
+            "answer": "Media queries are useful when you want to modify your site or app depending on a device's\nDisplay inline vs display block difference\nDisplay Inline : Display inline means it will not apply the height and width\nDisplay inline block: it will apply the height and width but same row only display\nDisplay Block: it will apply the height and width but it will display the new row"
+          },
+          {
+            "question": "Explain the selectors in css?",
+            "answer": "There are different selectors available those are\nId\nClass\nGroup\nTag\nUniversal"
+          }
+        ]
+      },
+      {
+        "title": "Bootstrap Concepts",
+        "content": [],
+        "qna": [
+          {
+            "question": "What is Bootstrap?",
+            "answer": "Bootstrap is a free front-end framework for faster and easier web development. Bootstrap includes HTML and CSS based design templates for typography, forms, buttons, tables, navigation, modals, image carousels and many other, as well as optional JavaScript plugins.\nMainly we are using the bootstrap all screen devises responsive the web application.\nBootstrap it will divided in to 12 colums based on the requirements we will breack the colums like col-md-4 col-md-5 col-md-2"
+          },
+          {
+            "question": "Which version you are using Bootstrap?",
+            "answer": "we are using the bootstarp 4"
+          },
+          {
+            "question": "What is break points in bootstrap.?",
+            "answer": "Bootstrap breakpoints are col-lg, col-xl, col-md, col-sm, col-4"
+          },
+          {
+            "question": "Container and container-fluid difference?",
+            "answer": "Containers are used to pad the content inside of them, and there are two container classes available:\nThe .container class provides a responsive fixed width container\nThe .container-fluid class provides a full width container, spanning the entire width of the viewport"
+          },
+          {
+            "question": "What is RWD(Responsive Web Design)?",
+            "answer": "Responsive web design is an approach where a web designer develops a single web page that automatically resizes itself according to the screen's size\nMust Know this concepts,\nContainer, container-fluid, buttons Color Codes, break points, Grid System, Carousel, tables,Alert, Badges, Progress Bar, Card, Collapse, Nav Bar, Forms, Model, Tabs."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "javascript-core",
+    "title": "JavaScript Mastery & Interview Q&A",
+    "category": "JavaScript",
+    "sections": [
+      {
+        "title": "Javascript Concepts",
+        "content": [],
+        "qna": [
+          {
+            "question": "What is JavaScript?",
+            "answer": "JavaScript is a lightweight client-side as well as server-side Scripting Language that allows you to create the Dynamic web-pages."
+          },
+          {
+            "question": "JavaScript is a single thread or multi-threaded language?",
+            "answer": "JavaScript is a single threaded language\nSingle threaded means it will perform a single task at a time."
+          },
+          {
+            "question": "JavaScript follows synchronous or asynchronous?",
+            "answer": "JavaScript by default follows a synchronous mechanism. If you need to go for asynchronous, we are using the callback or promises and async await"
+          },
+          {
+            "question": "What are the data types?",
+            "answer": "In JavaScript there are two types of data types.\nPrimitive data type\nNon primitive data type\nPrimitive data type means it will store only single value.\nExample string, number, Boolean, null, undefined these are the primitive data\ntypes.\nEx: var a=10;\nVar name='veera';\nNon Primitive Data types Means it will store the Multiple Values, Array, Object, function\nEx: var arr = [1,2,6,7,8,9,10]\nVar obj={\nName:\"veera\",\nCity:\"anantapur\"\n}"
+          },
+          {
+            "question": "What is Dynamic validation?",
+            "answer": "Dynamic validation in the sense Checking the user entered data weather True or false"
+          },
+          {
+            "question": "Var let const difference?",
+            "answer": "Var is a global scope key word, it will access throughout the program.\nVar only can reassign the values; Var only supported the Hoisting.\nLet: let is a block scope variable, with in the function only accessible,\nLet we can't re-declare the values, but we can re assign the value, let doesn't supported the Hoisting.\nconst: const is a functional scope variable, with in the function only accessible,\nConst we can't re-assign the values, const is a constant, const not supported the Hoisting"
+          },
+          {
+            "question": "Difference between == and === ?",
+            "answer": "== means it will compare only values\n=== means it will compare the both values and data type."
+          },
+          {
+            "question": "Difference between null and Undefined?",
+            "answer": "Null is an assignment value. It can be assigned to a variable as a representation of no value\nVar a=Null\nUndefined in JavaScript undefined means a variable has been declared but has not yet been assigned a value\nVar a;\nConsole.log(a);"
+          },
+          {
+            "question": "Type of Null?",
+            "answer": "Object"
+          },
+          {
+            "question": "What is Object?",
+            "answer": "Object is a non-primitive datatype\nObject is a physical entity or real word entity or instance of a class that can have states and behavior\nIt will create with the Pairs of Keys and Values."
+          },
+          {
+            "question": "How many ways we can create Object?",
+            "answer": "Objects creates in 3 ways\n1. By using object literals\n2. By using new keyword with parameterized object constructor\n3. By using new keyword with non-parameterized object constructor"
+          },
+          {
+            "question": "How we can copy one Object to another Object?",
+            "answer": "Use the spread (...) syntax\nShallow copy: Use the Object.assign() method.\nShallow copy means it will not disconnect from original object it will copy of new object\nDeep Copy: Use the JSON.parse() and JSON.stringify() methods.\nDeep copy means it will disconnect from original object and it will copy of new object"
+          },
+          {
+            "question": "What is Object.assign() and Object.create() ...?",
+            "answer": "object assign is an object method which is used to copy all the values from one or more source object to a target objects\nObject are assigned and copied by reference it will return the target object.\nObject create\ncreate() methord is used to create a new object with the specified prototype object and properties"
+          },
+          {
+            "question": "What is the difference between Deep copy and shallow copy in JavaScript ... ?",
+            "answer": "A deep copy means that all of the values of the new variable are copied and disconnected from the original object\nA shallow copy means that certain (sub-)values are still connected to the original Object"
+          },
+          {
+            "question": "What is spread operator ... ?",
+            "answer": "A Spread is a operator\nIt is used to copy data from one obeject to another object or one array to another array.\nEx. Var arr = [1,2,3,4]\nVar arr1=[5,6,7,8,9]\nVar arr2 = [\u2026arr, \u2026arr1];\nO/P => [1,2,3,4,5,6,7,8,9]"
+          },
+          {
+            "question": "What is rest parameter ... ?",
+            "answer": "A rest is a parameter\nIts Allows multiple parameters or arguments into an array\nIt is represented by \u2026\nFunction rest(a,b, \u2026rest){\nConsole.log(rest)\n}\nRest(1,2,3,4,5,6,7,8,9)"
+          },
+          {
+            "question": "What is promises?",
+            "answer": "A promise in JavaScript is an object that represents the eventual completion or failure of an asynchronous operation. It is used for handling asynchronous operations, such as making API calls or reading files, in a more organized and readable way.\nPromises have three states:\nPending: The initial state. The promise is still being resolved or rejected.\nFulfilled: The asynchronous operation has been completed successfully, and the promise is resolved. It returns a value.\nRejected: The asynchronous operation has encountered an error, and the promise is rejected. It returns an error.\nPromises have two main methods:\nthen(): This method is called when the promise is fulfilled. It takes two optional callbacks, one for success and one for failure. The success callback receives the resolved value, and the failure callback receives the rejected error.\ncatch(): This method is called when the promise is rejected. It takes a callback function that receives the error.\nOR\nPromises represents the completion of an asynchronous operation with its results it can be either successful completion of the promise, or its failure, but eventually completed. Promise uses a then() which is executed only after the completion of the promise resolve\nCode :\nlet payment = new Promise(function(resolve, reject)\n{\nlet send = false\nif(send)\n{\nresolve(\"payment is done\");\n}\nelse\n{\nreject(\"payment is cancel\");\n}\n});\npayment.then(( d ) => { console.log(d)} )\n.catch(( d ) => { console.log(d)} )"
+          },
+          {
+            "question": "What is Closers?",
+            "answer": "Closers are created whenever a variable that is defined outside the current scope is accessed from with some inner scope\nOr\nA closure in JavaScript is created when a function is defined within another function. It allows the inner function to access the variables and parameters of the outer function, even after the outer function has finished executing.\nCode\nfunction makeCounter () {\nvar count = 0;\nreturn function () {\ncount += 1;\nreturn count;\n}}\nvar x = makeCounter();\nconsole.log(x());\nconsole.log(x())"
+          },
+          {
+            "question": "How to create a JavaScript closure?",
+            "answer": "A JavaScript closure is created when a function is defined inside another function. When this happens, the inner function will have access to the variables in the outer function's scope, even after the outer function has returned."
+          },
+          {
+            "question": "Call Apply Bind ?",
+            "answer": "Call invokes the function immediately and allows you to pass in arguments one by one\nApply invokes the function immediately and allows you to pass in arguments as an array.\nBind returns a new function, and you can invoke/call it anytime you want by invoking a function.\nCall:\nvar name1 = {firstName: \"ravi\", lastName: \"kiran\"};\nvar name2 = {firstName:\"veera\", lastName: \"pasupula\"};\nfunction say(greeting) {\nconsole.log(greeting + ' ' + this.firstName + '' + this.lastName);\n}\n//say.call(name1, 'Hello');\nsay.call(name2, 'Hello');\napply:\nvar person1 = {firstName: 'Jon', lastName: 'Kuperman'};\nvar person2 = {firstName: 'Kelly', lastName: 'King'};\nfunction say(greeting) {\ncon ksole.log(greeting + ' ' + this.firstName + ' ' + this.lastName);\n}\nsay.apply(person1, ['Hello',\"dfdf\"]);\nsay.apply(person2, ['Hello']);\nbind:\nvar person1 = {firstName: 'Jon', lastName: 'Kuperman'};\nvar person2 = {firstName: 'Kelly', lastName: 'King'};\nfunction say() {\nconsole.log('Hello ' + this.firstName + ' ' + this.lastName);\n}\nvar sayHelloJon = say.bind(person1);\nvar sayHelloKelly = say.bind(person2);\nsayHelloJon();\nsayHelloKelly();"
+          },
+          {
+            "question": "What is Async Await?",
+            "answer": "Async await both are the keywords which are used to make promices easier to write\nAsync and await keywords are used to perform asynchronous operations in JavaScript.\nAsync- makes a function return a promise,\nAsync function always returns a promises value.\nconst data = async ()=>\n{\nvar data = \"This is Async\"\nreturn data;\n}\ndata().then(x=> console.log(x))\nAwait- makes a function wait for a promise,\nIt could be used within the async block only,\nIt makes the code wait until the promise return a result,\nIt only makes the async block wait\nasync function myfunction() {\nlet myPromise = new Promise(function(resolve) {\nsetTimeout(function() {resolve(\"Success\");}, 3000);\n});\nlet results = await myPromise;\nalert(results)\n}"
+          },
+          {
+            "question": "What is Object.freez vs Object.Seal?",
+            "answer": "create read update delete\nobject.freez No Yes No No\nobject.seal No yes Yes No"
+          },
+          {
+            "question": "What is Debouncing?",
+            "answer": "function will be executed only after the specified time once the user stops firing the event. (OR)\nIn the debouncing technique, no matter how many times the user fires the event,\nthe attached function will be executed only after the specified time once the user stops firing the event.\nex : searching in the internet."
+          },
+          {
+            "question": "What is Throttling ?",
+            "answer": "executes the function at specified intervals.\nThrottling is a technique in which, no matter how many times the user fires the event, the attached function will be executed only once in a given time interval.\nex : Making Api call is best."
+          },
+          {
+            "question": "Debouncing Vs Throttling?",
+            "answer": "The main difference between throttling and debouncing is that throttling executes the function at a regular interval, while debouncing executes the function only after some cooling period.\nBoth can be implemented with the help of the setTimeOut web Api."
+          },
+          {
+            "question": "Event capturing and Event bubbling?",
+            "answer": "Event capturing is the event starts from top element to the target element.\nIt is the opposite of Event bubbling, which starts from target element to the top element."
+          },
+          {
+            "question": "What is event delegation in JavaScript?",
+            "answer": "Image result for event delegation in JavaScript\nEvent Delegation is basically a pattern to handle events efficiently. Instead of adding an event listener to each and every similar element, we can add an event listener to a parent element and call an event on a particular target using the . target property of the event object"
+          },
+          {
+            "question": "What is prototype?",
+            "answer": "prototype is a property of a Function object. It is the prototype of objects constructed by that function. prot is an internal property of an object, pointing to its prototype."
+          },
+          {
+            "question": "Class in JavaScript?",
+            "answer": "A JavaScript class is a blueprint for creating objects. A class encapsulated data and functions that manipulate data.\nJavaScript classes provide a clear and structured way to create and manage objects. With features like constructors, encapsulation, inheritance, ."
+          },
+          {
+            "question": "Java script Hoisting?",
+            "answer": ""
+          },
+          {
+            "question": "When the program is running time it will move to the top of the scope, only Variable declaration part. Var only supported to the hoisting.?",
+            "answer": "Ex: a=10;\nConsole.log(a);\nVar a;"
+          },
+          {
+            "question": "What is strict mode in JavaScript?",
+            "answer": "In JavaScript scrict mode means it will through the silent errors while developing the Application;\n\"use strict\"\nA=10;\nConsole.log(a); // error"
+          },
+          {
+            "question": "What are the scopes available in JavaScript?",
+            "answer": "In JavaScript 3 scopes\nGlobal scope\nFunctional Scope\nBlock Scope"
+          },
+          {
+            "question": "What is Function?",
+            "answer": "Function is a peace of code or fundamental building block which will execute certain task at a time.\n2 ways we can create the Functions\nPeramitarized function\nNon Peramitarized function"
+          },
+          {
+            "question": "What is call back function?",
+            "answer": "Callback function is a plain JavaScript function. It will pass the argument as a one more anonymous function it is called as a callback function."
+          },
+          {
+            "question": "What is Callback hell issue?",
+            "answer": "Callback hell means it will pass the arguments as a more call backs that time it will getting issue it is called as a callback hell issue"
+          },
+          {
+            "question": "What is pure function?",
+            "answer": "A pure function in JavaScript is a function that returns the same result if the same arguments(input) are passed in the function."
+          },
+          {
+            "question": "What is Higher order Functions?",
+            "answer": "A function which takes another function as an argument or returns a function is known as a higher order function\nEx: map. Foreach, reduce, filter."
+          },
+          {
+            "question": "What is Event Loop?",
+            "answer": "Event loop is a mechanism it will divide the 3 parts, heap memory, stack area, call stack area,\nHeap memory in the sense it will storage part like var a=10;\nStack area in the sense it will execution part normal execution part like alert, console, document.writeln();\nCall stack means it will execution part but here only micro task macro task setTimeouts and promises will execute: both are same intervals it will first preference promises."
+          },
+          {
+            "question": "SetTimeOut SetInterval?",
+            "answer": "setTime out means it will execute the only one time.\nsetInterval means it will execute every particular time interval."
+          },
+          {
+            "question": "What is Template Literals?",
+            "answer": "Template literals are a new features introduced in Es6. it Provides an easy way of Creating Multiline string into Single String.\nLet str1 = \"Hello\";\nLet str2 = \"World\";\nLet str = `${str1} ${str2}`;\nConsole.log(str);"
+          },
+          {
+            "question": "What is destructuring?",
+            "answer": "Destructuring is a new way to extract elements from an object or array\nLet car ={\nName:\"bmw\";\nPrice:\"1cr\";\nModel:\"BMW123N\"\n}\nConst {name, price, model} = car;"
+          },
+          {
+            "question": "What is currying function?",
+            "answer": "Currying in JavaScript transforms a function with multiple arguments into a nested series of functions, each taking a single argument\nCode:\nFunction abc(a){\nReturn function(b){\nReturn function(c){\nReturn a+b+c;\n}\n}\n}\nVar res = abc(5)(6)(7);\nConsole.log(res);"
+          },
+          {
+            "question": "What is this key word?",
+            "answer": "This key word represents the current function or current object."
+          },
+          {
+            "question": "What is local storage and session storage?",
+            "answer": "Local storage means when the browser is closed it will not expire the session.\nSession storage means when the browser is closed it will expire the session."
+          },
+          {
+            "question": "Listed some of the es6 features ?",
+            "answer": "Let , const,\nArrow function\nSpread, rest operators\nTemplate literals\nDestructring\nPromises\nClosers\nArray methods\nMap, foreach, reduce, filter, splice, slice."
+          },
+          {
+            "question": "Normal function Vs Arrow function?",
+            "answer": "Normal function means whenever creating the normal function, function keyword, function name curly braces {}, return keyword and this keyword need to use, while creating the arrow function no need to write function keyword curly braces {}, return keyword and this keyword it will write the function expression in single line of code.\nNormal function suppported hoisting\nArrow function not supported hoisting"
+          },
+          {
+            "question": "Difference between map and forEach?",
+            "answer": "Map and for each both are the es6 features,"
+          },
+          {
+            "question": "When ever using the map method it will extract the all elements in the given array, map it will return type as a new array.?",
+            "answer": "forEach method it will extract the all elements in the given array, forEach method it will return type undefined.\nReduce\nReduce combine the all array sum of elemnts single element return"
+          },
+          {
+            "question": "Difference between splice and slice?",
+            "answer": "Splice means it will add or remove the given array but it will modify the original array.\nSlice means it will extract the particular index position elements but it will create the new array."
+          },
+          {
+            "question": "Difference between find and filter?",
+            "answer": "Find means based on the condition it will find the particular value\nFilter means it based on the condition it will return all elements\nReduce : all array"
+          },
+          {
+            "question": "Generators in JavaScript?",
+            "answer": "Generator is the new concept introduced in Es6. Its provides you a new way of working with iterators and functions.\nEs6 generator Is a different kind of function that may be paused in the middle either one or many times and can be resumed later\nFunction* mygenerator(){\nYield 1;\nYield 2;\n};\n50 Event capturing and Event bubbling\nAnd Event capturing is the event starts from top element to the target element.\nIt is the opposite of Event bubbling, which starts from target element to the top\nelement."
+          },
+          {
+            "question": "What is event delegation in JavaScript?",
+            "answer": "event delegation is an event handling pattern where you handle events at a\nhigher level in the DOM tree instead of the actual level where the\nevent was received\n<ul id=\"itemList\">\n<li top>Item 1</li>\n<li>Item 2</li>\n<li>Item 3</li>\n<li>Item 4</li>\n</ul>\nvar students= [ {name:\"suresh\", marks:40}, {name:\"raju\", marks:50}, {name:\"kiran\", marks:70}, {name:\"mahesh\", marks:90}, ]"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "react-qna-guide",
+    "title": "React JS Complete Architectural Guide",
+    "category": "React JS",
+    "sections": [
+      {
+        "title": "React Js Concepts",
+        "content": [],
+        "qna": [
+          {
+            "question": "What is Reactjs?",
+            "answer": "React js is a javascript library, it was developed and maintained by facebook. Mainly using the reactjs we can develop the faster web applications compare to other technologies."
+          },
+          {
+            "question": "What is Dom?",
+            "answer": "Dom Means document object model(DOM)\nIt is a child object to the window, it is used to add dynamic content to the html pages, and also to add dynamic validations."
+          },
+          {
+            "question": "When html document is loaded in the browser it becomes a document object.?",
+            "answer": ""
+          },
+          {
+            "question": "What is Real DOM?",
+            "answer": "Real dom is also known as physical dom.\nIt will work at the browser level.\nEvery time it will create a memory instance.\nIt will reload entire web application at a time.\nSo that it consumed more memory space and gives poor performance"
+          },
+          {
+            "question": "What is Virtual DOM?",
+            "answer": "Virtual DOM is also known as logical dom.\nIt will work at the react application level itself so it will occupy entire memory space.\nIt will check the previous state with new state in the component as tree structure.\nIf any modifications are needed then only it will reload only that updated component or state.\nThat's why it will consumes less memory space and gives high performance\nThe Diffing algorithm is used within the Virtual DOM mechanism."
+          },
+          {
+            "question": "What is react features?",
+            "answer": "React features are\nJsx(Javascript xml)\nComponents\nOne-way-data binding\nVirtual dom\nSimplicity\nPerformance."
+          },
+          {
+            "question": "What is jsx?",
+            "answer": "Jsx is an javascript xml, it is an extention to the javascript\nJsx is nothing but a combination of javascript, Custom tags, xml.\nAdvantages of jsx\nIt will combine 3 codes,\nJavascript, Customtags , xml tages.\nIt will make the react application more eligent and simple\nIt is a faster than regular javascript\nIt makes easier to create templates.\nBrowser can't read to the jsx\nBable translate jsx to html."
+          },
+          {
+            "question": "What is component?",
+            "answer": "Component is a piece of code or fundamental building block of a React application. Every React application contains at least one root component and n- no of child components. All components will form like as a Tree structure in the browser at the running time of a React application.Every React component can have their own structure methods as well as API's There are two types of Components:-a. Functional Component 16.8 vertionb. Class Component a. Functional Component Functional Components will look like a normal JavaScript Function. it is also called as a stateless component because it doesn't maintain any internal state. Functional components are used only in Dynamic Data Display purpose.b. Class Component Class Component will looks like a OOP'S class but it should extend with React.component.it is also called as a statefull component because it maintains state within the component by using this.state as well as props also. Class components are more complex than functional components, because it is follow the components life cycle method."
+          },
+          {
+            "question": "What is state?",
+            "answer": "State means need to maintain the data within the component. Whenever using the class based component it is called as statefull components because it will maintain state with in the component by using the this.state method.whenever using the function based component it is called as a state less component because it will not maintain the data with in the component but, using the HOOK methods data can be maintained in the functional components by using the useState method."
+          },
+          {
+            "question": "What is PROP'S?",
+            "answer": "Prop's is nothing but a when data need to pass from parent component to child component immutable child component can't change the data\nOr\nProps are a mechanism for passing data from parent component to child component. A component can't modify it's own props because they're immutable."
+          },
+          {
+            "question": "How many ways we can pass data from one component to other components?",
+            "answer": "we can pass data in 3 ways 1.Prop's 2.callback function 3.context API1.Prop's :- Props's is nothing but a when pass data from parent component to child component2.Callback Function :- it means pass the data from the child component to parent component 3. Context API:- mainly avoiding the propdrilling, it will pass data from one component to any other component with out any relationship. For example I have 20 components we need to pass data from 1st component to 20th component that time using the Context API, Context.Provider , Context.Consumer through that one we can pass the data\nOr\nContext API is mainly used to avoiding props-drilling. Using context API, data can be pass from one component to any other component without any relationship."
+          },
+          {
+            "question": "What is props drilling?",
+            "answer": "Props drilling means it will pass data from parent component to nth child components.\nFor example I have 20 components, need to pass data 1st component to last component (20th component), that time we can pass data one component to two component two to three component and three to four component any way we can pass 20th component. But if any middle component is not working means getting error it will not pass data nth components this is the draw back props drilling.\nTo overcome this problem we are using the context api or redux."
+          },
+          {
+            "question": "What is Context API?",
+            "answer": "Context API means it will pass data from one component to any other component with out any relationship using the context.provider. React.createContext()\nuseContext"
+          },
+          {
+            "question": "What is re-consolation?",
+            "answer": "Re-consolation in the sense it will update the component only updated component."
+          },
+          {
+            "question": "Class based Life cycle methods in react.?",
+            "answer": "There are 4 phases\nInitial phase\nMounting phase\nUpdated phase\nUnmounting phase\nInitial phase : initial phase available only constructor method.\nMounting Phase : in mounting phase\nConstructor\ngetDerivedStateFromProps\nRender\ncomponentDidMount\nUpdating Phase:\ngetDerivedStateFromProps\nshouldComponentUpdate\nRender\ngetSnapshotFromBeforeUpdate\ncomponentDidUpdate\nUnmounting phase\ncomponentWillUnMount."
+          },
+          {
+            "question": "Functional based lifecycle method?",
+            "answer": "In function based there are 3 lifecycle methods\ncomponentDidMount\ncomponentDidUpdate\ncomponentWillUnmount\nComponentDidMount:\nWhenever using the useEffect method it will pass the 2 arguments 1st argument as a callback function 2nd argument as a empty dependencey array[]. That time it will call as a componentDidMount.\nFunction App(){\nuseEffect(()=>{\nFetch(\u2018url');\n}, [] )\nReturn(\n<div\n</div>\n)\n}\ncomponentDIdUpdate: Whenever using the useEffect method it will pass the 2 arguments 1st argument as a callback function 2nd argument as a instead of empty dependency array it will pass state or props that time it will call as a component didUpdate Method.\nFunction App(){\nuseEffect(()=>{\nFetch(\u2018url');\n}, [data] )\nReturn(\n<div>\n</div>\n)\n}\ncomponentWillUnmount: inside useEffect methods one return after one function. It is called as a cleanup operations like remove the DOM.\nFunction App(){\nuseEffect(()=>{\nFetch(\u2018url');\nReturn function(){\n//code\n}\n}, [] )\nReturn(\n<div\n</div>\n)\n}"
+          },
+          {
+            "question": "What is Hook Methods?",
+            "answer": "Hooks are nothing but a new features also called as an In-Built functions. It was introduced in React V16.8.0 version. Hooks are backward compatible with old features of Reactjs, which means it does not contain any breaking changes."
+          },
+          {
+            "question": "When to use :-?",
+            "answer": "using hook methods we will maintain state in function component\nFetch and Consume data third party API's from server\nWe can get updated state from Redux store"
+          },
+          {
+            "question": "HOOKS RULES :-we are having mainly two rules in Hooks.?",
+            "answer": "call hook methods from react functions only\nonly call hooks at the top level of your react function i.e..,don't call hooks inside loops,conditions or nested functions and class component\nDon't call hooks from regular javascript functions\nThere are some hook methods:-\nuseState\nuseEffect\nuseMemo\nuseCallback\nuseRef\nuseContext\nuseReducer\nuseSelector\nuseDispatch\nDetails about Hook Methods:-\nuseState():- useState is a hook method which is used to manage state in functional component.\nuseState will take two arguments\nState variable\nSetter method\nExample :-const [name,setName]=useState(\"veera\");\nconst [city,setCity]=useState(\"atp\");\nuseEffect:-useEffect is a hook method it is equivalent to the 3methods\n1.componentDidMount\n2.component DidUpdate\n3.componentWillUnmount\nComponentDidMount:\nWhenever using the useEffect methods it will pass the 2 arguments 1st argument as a callback function 2nd argument as a empty dependencey array. That time it will call as a componentDidMount.\nFunction App(){\nuseEffect(()=>{\nFetch(\u2018url');\n}, [] )\nReturn(\n<div>\n</div>\n)\n}\ncomponentDIdUpdate: Whenever using the useEffect methos it will pass the 2 arguments 1st argument as a callback function 2nd argument as a instead of empty dependency array it will pass state or props that time it will call as a component didUpdate Method.\nFunction App(){\nuseEffect(()=>{\nFetch(\u2018url');\n}, [data] )\nReturn(\n<div\n</div>\n)\n}\ncomponentWillUnmount: inside useEffect methos one return after one function. It is called as a cleanup operations like remove the DOM.\nFunction App(){\nuseEffect(()=>{\nFetch(\u2018url');\nReturn function(){\n//code\n}\n}, [] )\nReturn(\n<div>\n</div>\n)\n}\nuseMemo():- useMemo is a hook method whenever using the useMemo it will return as a memorized value\nEx:- I have one component there is a one calculation part is there once application Re-render it will get directly value no need to calculate again and again.\n// let sum = useMemo(() => {\n// console.log(\"usememo \");\n// return num1 + num2;\n// }, [num1, num2]);\n4.useCallback():- useCallback is a hook method whenever using the useCallback it will return as a memoized function\nEx:- I have one parent component inside some child components once parent component state is updated it will Re-render the inside child components also, need to avoiding that particular component we are using the useCallback\n5.useReducer():-useReducer is a hook method it recieves a input and based on the dispatch action and value it will give us the modified updated state\nEx:- const[state,dispatch]=useReducer(state,action){\nSwitcth(action.type){\n//code //\n}\n}\n6.useRef():- useRef is a hook method it is mainly using the focus on the input field directly working as a DOM.\n7.useContext():- avoiding the propdrilling. useContext is a hook method it is used to get and consume data in children elements without using redux.Mainly using the useContext pass data from one component to any other component with out any relationship"
+          },
+          {
+            "question": "Difference between React and Angular?",
+            "answer": "React\nAngular\n1.React is JavaScript library\n1.Angular is JavScript Framework\n2.React follows one way data binding\n2.Angular follows two way data binding\n3.React follows View part only in MVC architecture\n3.Angular follows MVC archietecture\n4.React application is faster as compared to Angular\n4.Angular application is slow compared to React"
+          },
+          {
+            "question": "Difference between stateless and statefull components?",
+            "answer": "stateless component ==> Function based component is called a a stateless component because it will not maintain the state within the component.if we need to maintain the state in function based component we need to use hook methods\nStatefull component :- class based component called as a statefull component because it will maintain the state with in the component using the this.state method"
+          },
+          {
+            "question": "What is setState?",
+            "answer": "it is an one of the method which is available in component API it is used to update this.state objectby default setState method it follows asynchronous method"
+          },
+          {
+            "question": "What is constructor?",
+            "answer": "constructor is a special type of method it maintains 4things.\nsuper 2.this.state 3.bind handlers 4.bind the reference attribute\nIt will acquire the data from parent component to child component"
+          },
+          {
+            "question": "What is super?",
+            "answer": "super is a method it will acquire the data from parent component to child component"
+          },
+          {
+            "question": "What is return?",
+            "answer": "return is a controlled statement used to return that statement to the calling place. Return keyword is helped to display the browser"
+          },
+          {
+            "question": "What is event?",
+            "answer": "event is an one of the action that will provide interaction between html tags to javascript. Eg. onclick onchange onsubmit"
+          },
+          {
+            "question": "Difference B/w Controlled & uncontrolled Components?",
+            "answer": "Controlled and uncontrolled components mainly using for forms creation\nControlled component it follows the 4 rules\nstate : Maintain the initial values\nsetState: Updated input data in text fields\nValue attribute: read the input data\nonChange: it will take data when ever change\nControlled component working as a react application itself.\nUncontrolled Component:\nUncontrolled component it will not follow the 4 rules\nIt will works as a DOM (Document Object Model)\nMainly using the uncontrolled component focus on the input fields\nDirectly manipulate to DOM. Using the useRef"
+          },
+          {
+            "question": "What is React Fragment?",
+            "answer": "React fragment means it will not create the Extra node\nExample: we are creating div it will create the extra node instead of div we are writing the React.fragment"
+          },
+          {
+            "question": "What is Pure Component?",
+            "answer": "Pure component means it will stop the unnecessary re-renderings\nEx: we have one parent component inside some child components have\nOnce the parent component is updated it will Re-render the child components also, so we need to stop the re rendering inside child components."
+          },
+          {
+            "question": "What is React.Memo?",
+            "answer": "React.Memo Means It will Stop the unnecessary re-renderings in functional based component.\nEx: we have one parent component inside some child components hav\nOnce the parent component is updated it will Re-render the child components also, so we need to stop the re rendering child components."
+          },
+          {
+            "question": "What is SPA(Single Page Application) ?",
+            "answer": "SPA means Single Page Web Application it will create the only one HTML file inside one root id. Root id will collect the all components data and it gives that collected data to the browser it will displayed in UI."
+          },
+          {
+            "question": "React router how to install and how it's work ?",
+            "answer": "React Router we can't able to use directly in React. It is a Third party library we need to install library i.e.,\ncommand:-npm i react-router-dom\nMainly the React router dom is used to Navigation Purpose like one page to another page navigation.\nWhenever creating the React router dom we need to use Browser router,Routes,Route"
+          },
+          {
+            "question": "Difference between Axios and fetch method ?",
+            "answer": "Axios\nFetch\n1.Need to install 3rd party libraries npm i axios\n1.No need to install any 3rd party libraries\n2.No need to convert the data in JSON format\n2.Need to convert the data in JSON format\n3.we can able to easily handle the Errors in Axios\n3.it is very difficult to handle the Errors in Fetch"
+          },
+          {
+            "question": "What is pure component ?",
+            "answer": "Pure component is used in only Class based component. To stop the Unnecessary Re-rendering Ex:- I have one parent component inside some child components once parent component state is updated inside child components also Re-render need to avoid that Re-rendering we can go for Pure component"
+          },
+          {
+            "question": "What is React.memo?",
+            "answer": "React.memo is used in only Function based component. To stop the Unnecessary Re-rendering Ex:- I have one parent component inside some child components once parent component state is updated inside child components also Re-render need to avoid that Re-rendering we can go for React.memo\nEx :- export default React.memo (<About/>)\nCustom component\nCustom component is a special component it take input as a existing component return as a new component."
+          },
+          {
+            "question": "What is Higher Order Component (HOC)?",
+            "answer": "Higher order component is a special component it take input as a existing component return as a new component.\nMailny using the Reusable purpose. This is classbase component\nimport React from 'react';\nconst withLogger = (WrappedComponent) => {\nclass WithLogger extends React.Component {\ncomponentDidMount() {\nconsole.log('Component mounted');\n}\ncomponentWillUnmount() {\nconsole.log('Component unmounted');\n}\nrender() {\nreturn <WrappedComponent {...this.props} />;\n}\n}\nreturn WithLogger;\n};\n// Usage\nclass MyComponent extends React.Component {\nrender() {\nreturn <div>Hello, World!</div>;\n}\n}\nconst MyComponentWithLogger = withLogger(MyComponent);\nexport default MyComponentWithLogger;"
+          },
+          {
+            "question": "What is Redux and Redux Principles?",
+            "answer": "Redux is an architecture it is also called as predictable state container and it is an open source javaScript library\n=> it is mainly used for the managing the whole application state in unidirectional flow.\n=> it maintains global store. Which contains an updated state\nPrinciples :- Predictability of Redux is determined by 3 most important principles 1. Single source of truth.2. State is Read only.\n**3. Changes are made with pure functions\nRedux Architecture:**- it is an architecture or predictable state container which is mainly used to manage whole application state in uni-directional flow.It contains 5 main components :-1.Action2.Reducer3.Store4.Updated state 5.View components (or) UI Components\n1.Action :-\n=>Action is a pure JavaScript object or payload of the information\n=> using Action.Creators method we will create an action object=> using store.dispatch (action) method we will dispatch an action object\n2.Reducer :- =>Reducer is a pure javaScript function =>it will take previous state and dispatched action object as a two arguments => Based on the inputs it will update a new state\n3.Stat e :- =>if you want to get updated state from Redux store to your React components.=>View components we have follow the 2 concepts => we have to use useSeletor( ) and useDispatch ( ) methods to get updated state from Redux store to view components function component\n=>we have to useConnect( ) method to get updated state from redux store to view components class component\nuseSeletor => extract the data from redux store\nusedispatch => display data in browser\n=> Store:-\nFor entire redux application we have to create single store that will work as a global store\n=> we have to use React.createStore() method to maintain updated state.\n=> store contains provider to make state is available to all the components in application.\nView Components:-\n=> view components are the Components here we will get or access from redux store to update UI.\nMiddlewares:\nRedux Thunk and Redux saga\nRedux thunk is a middleware, if you want to do asynchronous operations and if you want to get 3rd party API's we have to use Redux thunk.\nRedux Saga is a middleware, if you want to do asynchronous operations and if you want to get 3rd party API's we have to use Redux Saga\nRedux saga generators using\nPure Function:\nA function is a process which takes some input,called arguments, and produces some output called a return value.\n=> a function is called pure if it follows below rules\nA function returns same inputs always return some output\nNo side effects, I.e it does not alter input data.\nNo maintain of local & global variables.\nCustom Hook React\nA custom hook in React is a reusable function that encapsulates logic React's hooks (like useState, useEffect) to manage state and side effects across components. Custom hooks enable code reusability, abstraction, and better readability.\nAny api call use create one api fetch component\n\uf0b7 Code Reusability:\nCustom hooks allow you to extract reusable logic from components, making your code more modular and DRY (Don't Repeat Yourself). For example, instead of duplicating the same API-fetching logic across multiple components, you can create a custom hook like useFetch.\n\uf0b7 Separation of Concerns:\nLogic and UI are separated. Custom hooks handle the logic, while components focus on rendering the UI.\n\uf0b7 Cleaner Code:\nComponents become less cluttered because the complex logic is moved to a custom hook.\n\uf0b7 Share Logic Between Components:\nThey enable the sharing of logic that cannot be achieved with Higher-Order Components (HOCs) or render props. For instance, hooks can encapsulate stateful logic and side effects in a way that's easier to use.\n\uf0b7 Improved Readability and Maintainability:\nCustom hooks give meaningful names to the logic they encapsulate, making the codebase easier to understand and maintain.\n\uf0b7 Enhanced Testing:\nLogic extracted to custom hooks can be tested independently of components, improving test coverage.\n\uf0b7 Avoid Duplication:"
+          },
+          {
+            "question": "When multiple components share similar logic, a custom hook prevents code duplication, reducing bugs and inconsistencies.?",
+            "answer": "Lazy Loading react\nLazy loading in React.js is a technique used to improve the performance of web applications by loading certain components, routes, or modules only when they are needed, rather than loading them all at once when the application initially loads. This can significantly reduce the initial load time and resource usage of your application, especially for larger and more complex applications.\nReact provides a built-in way to implement lazy loading using React.lazy() and Suspense.\nUse React.lazy(): Wrap the import of the module you want to lazy load using\nReact.lazy().\nThis function takes a function that calls the import() function,"
+          },
+          {
+            "question": "Which returns a Promise that resolves to a module containing the component.?",
+            "answer": "Use Suspense: Wrap the lazy loaded component with a Suspense component.\nThis component allows you to specify a fallback UI to display while the lazy component is loading.\nimport React, { Suspense } from 'react';\n// Lazy load the component\nconst LazyComponent = React.lazy(() => import('./LazyComponent'));\nconst App = () => {\nreturn (\n<div>\n{/* Wrap lazy loaded component with Suspense */}\n<Suspense fallback={<div>Loading...</div>}>\n<LazyComponent />\n</Suspense>\n</div>\n);\n};\nexport default App;\nWe use React.lazy() to lazy load the LazyComponent.\nThe import is wrapped in a function to ensure it's only loaded when needed.\nWe use the Suspense component to specify a fallback UI\n(in this case, a simple \"Loading...\" message) that will be displayed while the\nLazyComponent is loading.Improve performance in react Application\nReact.fragment => avoid extra nodes\n<div> </div> instead of div write <React.fragment> not accupy the line of space not occupy any memory\nReact.Memo => stop unnecessery re rendarings function componet\nPure component=> stop unnecessery re rendarings class componet\nHOC reusable code no need to write agai again same code same\nLazyloading => for reduce the loading time.\nuseMemo => memorized value\nuseCallback => memorized function\nminified css in js\nHOC\nHOC means higher order component input as a existing component and it will return as a new component\nWe are create one button use multiple times you can use.\nReusable purpose we can use hoc\nHoc class base component\nPortals\n- Portal is an advanced concept in react which provides a way to render child component outside of parent DOM hierarchy.\n- If any child component having modal/popup/tooltip in its JSX then its parent component's css will effect the child,s css.\n- To implement a portal in React, you use the ReactDOM.createPortal() method. This method allows you to specify the content you want to render and the target DOM element where it should be inserted.\n- Create one more div in index.html file to render child component in which modal develops.\n<div id='model-root'></div>\n- In child component JSX use the below to create portal.\n=> ReactDOM.createPortal(modal, document.getElementById(model-root))\n- By using portals, you can achieve more flexibility in rendering elements and create better user experiences when it comes to managing overlapping or out-of-flow components in React applications."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "react-interview-questions",
+    "title": "React JS Key Questions & Quick Answers",
+    "category": "React JS",
+    "sections": [
+      {
+        "title": "General Concepts",
+        "content": [],
+        "qna": [
+          {
+            "question": "What is doctype?",
+            "answer": "Doctype provides a version of html 5"
+          },
+          {
+            "question": "What is meta tag?",
+            "answer": "Meta tag defines the Metadata about the html Document."
+          },
+          {
+            "question": "What is view port?",
+            "answer": "The viewport is the user's visible area of a web page. It varies with the device - it will be smaller on a mobile phone than on a computer screen. You should include the following <meta> element in all your web pages: <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"
+          },
+          {
+            "question": "Difference between inline and block tags?",
+            "answer": "Block elements cover space from left to right as for as it can go. Inline Elements only cover the space as bounded by the tags in the html element. Block elements have top and bottom margins. Inline Elements don't have top and bottom margin.\nInline tags: span,b,I,img,mark\nBlocklevel tags: div,p, all heading tags(h1,h2,h3,h4,h5,h6)"
+          },
+          {
+            "question": "What is semantic tags?",
+            "answer": "The html semantics refers to the tags that provide meaning to an html page rather than just presentation. It Makes html more comprehensible by better defining the different sections and layout of webpages.\nDeveloper understanding purpose\nAnd SEO\nEg. header, footer, form, table, article, aside.\nNon symantics => Div p , span, ul,li,ol,li, h1,h2"
+          },
+          {
+            "question": "What is element and tag difference?",
+            "answer": "Html Tag : html tag starts with < and\nend with >\nHtml element: whatever written within a html tag are html element."
+          },
+          {
+            "question": "What is attribute?",
+            "answer": "All html elements can have attributes\nAttributes Provides Additional Information about element\nAttributes are always specified in the start tag\nAttributes usually come in Name/Value pairs like, Name:\"value\"."
+          },
+          {
+            "question": "Difference between link and a tag?",
+            "answer": "Html4 vs html 5\nNew features of html 5\nSession storage local storage"
+          },
+          {
+            "question": "What is box model?",
+            "answer": "The CSS box model is used to define the design and layout of elements of CSS.\nThe elements are:\nMargin - It removes the area around the border. It is transparent.\nBorder - It represents the area around the padding\nPadding - It removes the area around the content. It is transparent.\nContent - It represents the content like text, images, etc."
+          },
+          {
+            "question": "What is position properties?",
+            "answer": "positions properties\n1. static -> Default value. Elements render in order, as they appear in the document flow\n2.relative -> The element is positioned relative to its normal position, so \"left:20px\" adds 20 pixels to the element's LEFT\n3.absolute-> The element is positioned relative to its first positioned (not static) ancestor element\n4.sticky-> The element is positioned based on the user's scroll position\n5.fixed -> The element is positioned relative to the browser window"
+          },
+          {
+            "question": "What is flex and grid box?",
+            "answer": "flex we can create single dimentional layout row wise or colum wise\nProperties are -> display:flex, flex-direction :row, flex-direction:colum,\nflex-direction:row-riverse, flex-direction:colum-riverse\ngrid -> it will create the two dimentional lay out like row wise and colum wise"
+          },
+          {
+            "question": "How many ways to create a styles in css?",
+            "answer": "We can Create 3 ways\nInline Css --> it will write the with in the tag\nInternal Css -->it will write the head tag in top of the file\nExternal Css -- it will create the new file like style.css their it will write the css"
+          },
+          {
+            "question": "What are the different ways in css selector?",
+            "answer": "Float left float right\nJestify properties"
+          },
+          {
+            "question": "How to create a text in center horizontal and vertically?",
+            "answer": "Horizontally and vertically center properties are\nDisplay:flex;\nJustify-content:center;\nAlign-items:center;\nHeight:100vh;"
+          },
+          {
+            "question": "What is media query // @media screen and (min-width:320px and 480px ) 678 to 991 +?",
+            "answer": "Key concept covered in standard React and Web development interview prep."
+          },
+          {
+            "question": "What is bootstrap?",
+            "answer": "Bootstrap is a free front-end framework for faster and easier web development. Bootstrap includes HTML and CSS based design templates for typography, forms, buttons, tables, navigation, modals, image carousels and many other, as well as optional JavaScript plugins.\nMainly we are using the bootstrap all screen devises responsive the web application.\nBootstrap it will divided in to 12 colums based on the requirements we will breack the colums like col-md-4 col-md-5 col-md-2"
+          },
+          {
+            "question": "What is the version of your using. //4?",
+            "answer": "Key concept covered in standard React and Web development interview prep."
+          },
+          {
+            "question": "What is break points in bootstrap. Col-lg, col-xl, col-md, col-sm, col-?",
+            "answer": "container and container-fluid difference"
+          },
+          {
+            "question": "What is responsive web design(RWD)?",
+            "answer": "Key concept covered in standard React and Web development interview prep."
+          }
+        ]
+      },
+      {
+        "title": "Javascript Concepts",
+        "content": [],
+        "qna": [
+          {
+            "question": "What are the scopes in js?",
+            "answer": "js hoisting\njs scrict mode\nclouser\n== and ===\nTernary operator ? :"
+          },
+          {
+            "question": "What is callback?",
+            "answer": "Key concept covered in standard React and Web development interview prep."
+          },
+          {
+            "question": "What is higher order function?",
+            "answer": "Object destructing --es6"
+          },
+          {
+            "question": "Difference between null and undefined?",
+            "answer": "Null is an assignment value. It can be assigned to a variable as a representation of no value\nVar a=Null\nUndefined in JavaScript undefined means a variable has been declared but has not yet been assigned a value\nVar a;\nConsole.log(a);"
+          },
+          {
+            "question": "What is promises \u2013es6?",
+            "answer": "A Promise in ES6 represents the eventual completion or failure of an asynchronous operation.\n\n**States:**\n1. Pending\n2. Fulfilled\n3. Rejected"
+          },
+          {
+            "question": "What is call, apply, bind?",
+            "answer": "Spread & rest \u2013es6\nTemplate literals --es6\nSettimeout setintervel\nDeepcopy shallow copy\nArray methods --- es6\nAsync/await --es6\nGenerators\nCury function"
+          },
+          {
+            "question": "What is normal function and arrow function -es6?",
+            "answer": "Key concept covered in standard React and Web development interview prep."
+          },
+          {
+            "question": "What is this keyword?",
+            "answer": "This key word represents the current function or current object."
+          },
+          {
+            "question": "What is event in js?",
+            "answer": "Key concept covered in standard React and Web development interview prep."
+          },
+          {
+            "question": "What is event bubling and event capturing?",
+            "answer": "Local storage and session Storage"
+          },
+          {
+            "question": "Difference between Map foreach?",
+            "answer": "Key concept covered in standard React and Web development interview prep."
+          },
+          {
+            "question": "Explain Some of es6 features?",
+            "answer": "Splice vs slice"
+          },
+          {
+            "question": "Explain reduce?",
+            "answer": "b/w some every\nb/w find indexof vs last index of\nDebouncing throttling"
+          }
+        ]
+      },
+      {
+        "title": "Reactjs Concepts",
+        "content": [],
+        "qna": [
+          {
+            "question": "What is Reactjs?",
+            "answer": "React js is a javascript library, it was developed and maintained by facebook. Mainly using the reactjs we can develop the faster web applications compare to other technologies."
+          },
+          {
+            "question": "How it's work react?",
+            "answer": "Key concept covered in standard React and Web development interview prep."
+          },
+          {
+            "question": "Difference between angular & react?",
+            "answer": "Key concept covered in standard React and Web development interview prep."
+          },
+          {
+            "question": "What is jsx?",
+            "answer": "Jsx is an javascript xml, it is an extention to the javascript\nJsx is nothing but a combination of javascript, Custom tags, xml.\nAdvantages of jsx\nIt will combine 3 codes,\nJavascript, Customtags , xml tages.\nIt will make the react application more eligent and simple\nIt is a faster than regular javascript\nIt makes easier to create templates.\nBrowser can't read to the jsx\nBable translate jsx to html."
+          },
+          {
+            "question": "What is component?",
+            "answer": "Component is a piece of code or fundamental building block of a React application. Every React application contains at least one root component and n- no of child components. All components will form like as a Tree structure in the browser at the running time of a React application.Every React component can have their own structure methods as well as API's There are two types of Components:-a. Functional Component 16.8 vertionb. Class Component a. Functional Component Functional Components will look like a normal JavaScript Function. it is also called as a stateless component because it doesn't maintain any internal state. Functional components are used only in Dynamic Data Display purpose.b. Class Component Class Component will looks like a OOP'S class but it should extend with React.component.it is also called as a statefull component because it maintains state within the component by using this.state as well as props also. Class components are more complex than functional components, because it is follow the components life cycle method."
+          },
+          {
+            "question": "Difference between stateless and state full components?",
+            "answer": "stateless component ==> Function based component is called a a stateless component because it will not maintain the state within the component.if we need to maintain the state in function based component we need to use hook methods\nStatefull component :- class based component called as a statefull component because it will maintain the state with in the component using the this.state method"
+          },
+          {
+            "question": "What is state?",
+            "answer": "State means need to maintain the data within the component. Whenever using the class based component it is called as statefull components because it will maintain state with in the component by using the this.state method.whenever using the function based component it is called as a state less component because it will not maintain the data with in the component but, using the HOOK methods data can be maintained in the functional components by using the useState method."
+          },
+          {
+            "question": "What is props?",
+            "answer": "Prop's is nothing but a when data need to pass from parent component to child component immutable child component can't change the data\nOr\nProps are a mechanism for passing data from parent component to child component. A component can't modify it's own props because they're immutable."
+          },
+          {
+            "question": "What dom?",
+            "answer": "Key concept covered in standard React and Web development interview prep."
+          },
+          {
+            "question": "What is virtual dom diffing algorithem?",
+            "answer": "Key concept covered in standard React and Web development interview prep."
+          },
+          {
+            "question": "What is Real dom?",
+            "answer": "Real dom is also known as physical dom.\nIt will work at the browser level.\nEvery time it will create a memory instance.\nIt will reload entire web application at a time.\nSo that it consumed more memory space and gives poor performance"
+          },
+          {
+            "question": "What is reconsolation?",
+            "answer": "Re-consolation in the sense it will update the component only updated component."
+          },
+          {
+            "question": "What is setstate?",
+            "answer": "it is an one of the method which is available in component API it is used to update this.state objectby default setState method it follows asynchronous method"
+          },
+          {
+            "question": "How many ways we can pass data from one component to another component?",
+            "answer": "Key concept covered in standard React and Web development interview prep."
+          },
+          {
+            "question": "What is constructor?",
+            "answer": "constructor is a special type of method it maintains 4things.\nsuper 2.this.state 3.bind handlers 4.bind the reference attribute\nIt will acquire the data from parent component to child component"
+          },
+          {
+            "question": "What is super?",
+            "answer": "super is a method it will acquire the data from parent component to child component"
+          },
+          {
+            "question": "What is Return?",
+            "answer": "return is a controlled statement used to return that statement to the calling place. Return keyword is helped to display the browser"
+          },
+          {
+            "question": "What is event?",
+            "answer": "event is an one of the action that will provide interaction between html tags to javascript. Eg. onclick onchange onsubmit"
+          },
+          {
+            "question": "What is props drilling?",
+            "answer": "Props drilling means it will pass data from parent component to nth child components.\nFor example I have 20 components, need to pass data 1st component to last component (20th component), that time we can pass data one component to two component two to three component and three to four component any way we can pass 20th component. But if any middle component is not working means getting error it will not pass data nth components this is the draw back props drilling.\nTo overcome this problem we are using the context api or redux."
+          },
+          {
+            "question": "Difference between controlled & uncontrolled components?",
+            "answer": "**Controlled Components:**\n- Data is handled by a React component state (useState / setState).\n\n**Uncontrolled Components:**\n- Data is handled by the DOM itself using refs (useRef)."
+          },
+          {
+            "question": "What is context api?",
+            "answer": "Context API means it will pass data from one component to any other component with out any relationship using the context.provider. React.createContext()\nuseContext"
+          },
+          {
+            "question": "What is React Fragment?",
+            "answer": "React fragment means it will not create the Extra node\nExample: we are creating div it will create the extra node instead of div we are writing the React.fragment"
+          },
+          {
+            "question": "What is SPA (single page Application)?",
+            "answer": "SPA means Single Page Web Application it will create the only one HTML file inside one root id. Root id will collect the all components data and it gives that collected data to the browser it will displayed in UI."
+          },
+          {
+            "question": "Difference between Axios and fetch method?",
+            "answer": "Axios\nFetch\n1.Need to install 3rd party libraries npm i axios\n1.No need to install any 3rd party libraries\n2.No need to convert the data in JSON format\n2.Need to convert the data in JSON format\n3.we can able to easily handle the Errors in Axios\n3.it is very difficult to handle the Errors in Fetch"
+          },
+          {
+            "question": "What is hooks?",
+            "answer": "Key concept covered in standard React and Web development interview prep."
+          },
+          {
+            "question": "Explain in your working hooks?",
+            "answer": "Key concept covered in standard React and Web development interview prep."
+          },
+          {
+            "question": "What is pure component?",
+            "answer": "Pure component is used in only Class based component. To stop the Unnecessary Re-rendering Ex:- I have one parent component inside some child components once parent component state is updated inside child components also Re-render need to avoid that Re-rendering we can go for Pure component"
+          },
+          {
+            "question": "What is React.memo?",
+            "answer": "React.memo is used in only Function based component. To stop the Unnecessary Re-rendering Ex:- I have one parent component inside some child components once parent component state is updated inside child components also Re-render need to avoid that Re-rendering we can go for React.memo\nEx :- export default React.memo (<About/>)\nCustom component\nCustom component is a special component it take input as a existing component return as a new component."
+          },
+          {
+            "question": "Difference between usememo and useCallback?",
+            "answer": "Key concept covered in standard React and Web development interview prep."
+          },
+          {
+            "question": "What is higher order component (HOC)?",
+            "answer": "Higher order component is a special component it take input as a existing component return as a new component.\nMailny using the Reusable purpose. This is classbase component\nimport React from 'react';\nconst withLogger = (WrappedComponent) => {\nclass WithLogger extends React.Component {\ncomponentDidMount() {\nconsole.log('Component mounted');\n}\ncomponentWillUnmount() {\nconsole.log('Component unmounted');\n}\nrender() {\nreturn <WrappedComponent {...this.props} />;\n}\n}\nreturn WithLogger;\n};\n// Usage\nclass MyComponent extends React.Component {\nrender() {\nreturn <div>Hello, World!</div>;\n}\n}\nconst MyComponentWithLogger = withLogger(MyComponent);\nexport default MyComponentWithLogger;"
+          },
+          {
+            "question": "Explain the useEffect?",
+            "answer": "Redux"
+          },
+          {
+            "question": "What is Redux?",
+            "answer": "Redux is a predictable state container for JavaScript apps.\n\n**Core Principles:**\n1. Single source of truth (Store)\n2. State is read-only (Actions)\n3. Changes made with pure functions (Reducers)"
+          },
+          {
+            "question": "Explain Redux Workflow?",
+            "answer": "Redux is a predictable state container for JavaScript apps.\n\n**Core Principles:**\n1. Single source of truth (Store)\n2. State is read-only (Actions)\n3. Changes made with pure functions (Reducers)"
+          },
+          {
+            "question": "Explain redux principles?",
+            "answer": "4. redux Architecture"
+          },
+          {
+            "question": "What is middleware why we use (Thunk && Saga)?",
+            "answer": "Key concept covered in standard React and Web development interview prep."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "hr-behavioral-intro",
+    "title": "Non-Technical, HR & Self-Intro Guide",
+    "category": "HR & Intro",
+    "sections": [
+      {
+        "title": "Self Introduction & Personal Pitch",
+        "content": [
+          "Preparing a structured self-introduction is crucial for setting a positive tone during job interviews."
+        ],
+        "qna": [
+          {
+            "question": "Tell me about yourself / Introduce yourself?",
+            "answer": "**Greeting:**\nGood morning/afternoon!\n\n**Background:**\nI am a passionate Frontend & Web Developer with hands-on experience in building modern, performant web applications using React, JavaScript, and Tailwind CSS.\n\n**Experience & Work:**\nOver my career, I have specialized in building responsive user interfaces, integrating APIs, optimizing website performance, and translating designs into clean code.\n\n**Why this role:**\nI am eager to contribute my problem-solving skills and expertise in web technologies to create intuitive, high-impact web products."
+          },
+          {
+            "question": "What are your strengths and weaknesses?",
+            "answer": "**Strengths:**\n**1. Problem Solving:** Quick at debugging and breaking down complex UI requirements into reusable components.\n**2. Adaptability:** Fast learner who quickly picks up new libraries, tools, and best practices.\n**3. Attention to Detail:** Strong focus on smooth user experiences, typography, and visual aesthetics.\n\n**Weaknesses:**\nI sometimes get deeply focused on perfecting micro-details of a project. To manage this, I set clear time constraints and prioritize core functional deliverables first."
+          }
+        ]
+      },
+      {
+        "title": "HR & Behavioral Questions",
+        "content": [],
+        "qna": [
+          {
+            "question": "Why do you want to join our company?",
+            "answer": "I have been following your product growth and tech stack. I admire the company's commitment to high quality, user-centric engineering. My skills in React and web application development align directly with your current goals, and I am excited about the opportunity to grow alongside your team."
+          },
+          {
+            "question": "Where do you see yourself in 3 to 5 years?",
+            "answer": "In 3 to 5 years, I see myself growing into a Senior Frontend Engineer / Technical Lead. I aim to deepen my architectural expertise, mentor junior developers, and take ownership of key feature modules that drive value for the organization."
+          },
+          {
+            "question": "How do you handle pressure, tight deadlines, or conflicting priorities?",
+            "answer": "**1. Prioritization:** I break down tasks into high-priority core requirements and secondary enhancements.\n**2. Communication:** I maintain active transparency with team members and managers regarding timelines.\n**3. Focus:** I use time-blocking to eliminate distractions and maintain steady progress."
+          },
+          {
+            "question": "Why are you looking for a job change?",
+            "answer": "I am seeking new challenges that allow me to expand my technical impact, work with cutting-edge technologies, and take on greater responsibility in building production-scale applications."
+          },
+          {
+            "question": "What are your salary expectations?",
+            "answer": "My salary expectations are aligned with industry standards for my experience level and the responsibilities of this role. I am open to discussing a package that reflects the value I will bring to the company."
+          },
+          {
+            "question": "Do you have any questions for us?",
+            "answer": "1. What are the key engineering challenges the team is currently facing?\n2. What does a typical day look like for a developer on this team?\n3. What are the opportunities for learning and career growth within the company?"
+          }
+        ]
+      }
+    ]
+  }
+]
