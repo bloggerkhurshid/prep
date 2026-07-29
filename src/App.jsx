@@ -115,11 +115,9 @@ export default function App() {
               <Flame size={22} className="fill-amber-300/30 stroke-[2.2]" />
             </div>
             <div className="flex flex-col">
-              <div className={`flex items-center space-x-1.5 font-extrabold text-base sm:text-lg tracking-tight uppercase leading-none ${
-                isDarkMode ? 'text-white' : 'text-neutral-900'
-              }`}>
-                <span>Interview</span>
-                <span>Prep</span>
+              <div className="flex items-center space-x-1.5 font-extrabold text-base sm:text-lg tracking-tight uppercase leading-none">
+                <span className={isDarkMode ? 'text-white' : 'text-neutral-900'}>Interview</span>
+                <span className="bg-gradient-to-r from-amber-400 via-pink-400 to-rose-500 bg-clip-text text-transparent drop-shadow-sm">Prep</span>
               </div>
               <span className={`text-[9px] font-semibold tracking-widest uppercase pt-0.5 ${
                 isDarkMode ? 'text-white' : 'text-rose-600'
