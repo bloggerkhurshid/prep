@@ -111,15 +111,15 @@ export default function App() {
           
           {/* Logo / Title H1 for SEO */}
           <h1 className="flex items-center space-x-3 font-sans">
-            <div className="p-2 rounded-xl border border-orange-500/30 bg-gradient-to-br from-orange-500 to-amber-600 text-white shadow-lg shadow-orange-500/20">
-              <Code2 size={20} className="stroke-[2.5]" />
+            <div className="w-9 h-9 rounded-xl flex items-center justify-center font-black text-lg bg-gradient-to-br from-orange-500 to-amber-600 text-white shadow-lg shadow-orange-500/25 border border-orange-400/30">
+              P
             </div>
-            <div className="flex items-center space-x-2">
-              <span className="px-2.5 py-0.5 rounded-lg font-black text-base sm:text-lg tracking-wider uppercase bg-gradient-to-r from-orange-500 to-amber-500 text-white shadow-md shadow-orange-500/20">
-                INTERVIEW PREP
+            <div className="flex flex-col">
+              <span className="font-extrabold text-base sm:text-lg tracking-tight uppercase leading-none text-neutral-900 dark:text-white">
+                Interview <span className="text-orange-500">Prep</span>
               </span>
-              <span className="text-[9px] sm:text-[10px] font-semibold tracking-widest uppercase opacity-70 text-orange-800 dark:text-orange-300">
-                khurshidalom
+              <span className="text-[9px] font-semibold tracking-widest uppercase opacity-60 text-orange-600 dark:text-orange-400 pt-0.5">
+                by khurshidalom
               </span>
             </div>
           </h1>
