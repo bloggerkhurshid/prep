@@ -51,6 +51,18 @@
           {
             "question": "DIfference between div vs span?",
             "answer": "Div is a block level tag, it will occupy the entire width it will display new row.\nSpan is a inline tag it will occupy particular text only it will display side by side"
+          },
+          {
+            "question": "What is Core Web Vitals (LCP, INP, CLS)?",
+            "answer": "Core Web Vitals are Google metric standards for measuring web user experience:\n\n1. **LCP (Largest Contentful Paint):** Measures loading speed (Target: < 2.5s).\n2. **INP (Interaction to Next Paint):** Measures page responsiveness to user input (Target: < 200ms).\n3. **CLS (Cumulative Layout Shift):** Measures visual stability and layout jumping (Target: < 0.1)."
+          },
+          {
+            "question": "What is the Critical Rendering Path & How to Optimize Page Load Speed?",
+            "answer": "The Critical Rendering Path is the sequence of steps the browser takes to render HTML, CSS, and JS into pixels on screen:\n\n**Steps:** DOM -> CSSOM -> Render Tree -> Layout -> Paint.\n\n**Optimizations:**\n- Minify and compress CSS/JS bundles.\n- Use async or defer scripts.\n- Implement Code Splitting & Lazy Loading.\n- Use modern WebP/AVIF images with explicit width and height."
+          },
+          {
+            "question": "What is CORS (Cross-Origin Resource Sharing) & How to Fix CORS Errors?",
+            "answer": "CORS is a browser security mechanism restricting web pages from making API requests to a different domain/origin than the one that served the web page.\n\n**Fixing CORS:**\n- Add HTTP Response Headers on backend server: Access-Control-Allow-Origin: * or explicit origin domain.\n- Use preflight OPTIONS request handling.\n- In development, setup a local proxy server in Vite (vite.config.js server.proxy)."
           }
         ]
       },
@@ -364,6 +376,26 @@
           {
             "question": "What is event delegation in JavaScript?",
             "answer": "event delegation is an event handling pattern where you handle events at a\nhigher level in the DOM tree instead of the actual level where the\nevent was received\n<ul id=\"itemList\">\n<li top>Item 1</li>\n<li>Item 2</li>\n<li>Item 3</li>\n<li>Item 4</li>\n</ul>\nvar students= [ {name:\"suresh\", marks:40}, {name:\"raju\", marks:50}, {name:\"kiran\", marks:70}, {name:\"mahesh\", marks:90}, ]"
+          },
+          {
+            "question": "What is Prototype Chain & Prototypal Inheritance in JavaScript?",
+            "answer": "Every object in JavaScript has an internal prototype reference. When accessing a property or method on an object, JavaScript first looks at the object itself; if not found, it traverses up the prototype chain until it reaches Object.prototype or null.\n\n**Key Concept:**\nObjects inherit properties and methods directly from other objects rather than through traditional class blueprints."
+          },
+          {
+            "question": "What is the Event Loop, Microtask Queue vs Macrotask Queue?",
+            "answer": "JavaScript is single-threaded and uses an event loop to handle asynchronous execution.\n\n**Execution Priority:**\n1. **Call Stack:** Synchronous code executes immediately.\n2. **Microtask Queue:** Handles Promises (.then, .catch, async/await), queueMicrotask, and MutationObserver (Executes immediately after call stack empties).\n3. **Macrotask Queue:** Handles setTimeout, setInterval, setImmediate, and DOM I/O events.\n\n**Takeaway:** Microtasks always execute before the next Macrotask."
+          },
+          {
+            "question": "What is Shallow Copy vs Deep Copy?",
+            "answer": "Shallow Copy:\n- Copies top-level properties. Nested objects or arrays share the same memory reference.\n- Methods: Object.assign({}, obj), spread operator {...obj}, [...arr].\n\nDeep Copy:\n- Duplicates all nested objects recursively into brand new memory allocations.\n- Methods: structuredClone(obj), JSON.parse(JSON.stringify(obj)), or Lodash cloneDeep."
+          },
+          {
+            "question": "What is the difference between null, undefined, and undeclared?",
+            "answer": "Undefined:\n- A variable has been declared but has not been assigned a value yet (or a function missing an explicit return).\n\nNull:\n- An intentional assignment representing the absence of any object value.\n\nUndeclared:\n- A variable that has not been declared using var, let, or const in scope (Triggers a ReferenceError)."
+          },
+          {
+            "question": "What is Function Composition & Pipe in JavaScript?",
+            "answer": "Function composition is a mathematical concept where the output of one function becomes the input of another f(g(x)).\n\n**Compose vs Pipe:**\n- **Compose:** Executes functions from right to left.\n- **Pipe:** Executes functions from left to right."
           }
         ]
       }
@@ -533,6 +565,26 @@
           {
             "question": "Which returns a Promise that resolves to a module containing the component.?",
             "answer": "Use Suspense: Wrap the lazy loaded component with a Suspense component.\nThis component allows you to specify a fallback UI to display while the lazy component is loading.\nimport React, { Suspense } from 'react';\n// Lazy load the component\nconst LazyComponent = React.lazy(() => import('./LazyComponent'));\nconst App = () => {\nreturn (\n<div>\n{/* Wrap lazy loaded component with Suspense */}\n<Suspense fallback={<div>Loading...</div>}>\n<LazyComponent />\n</Suspense>\n</div>\n);\n};\nexport default App;\nWe use React.lazy() to lazy load the LazyComponent.\nThe import is wrapped in a function to ensure it's only loaded when needed.\nWe use the Suspense component to specify a fallback UI\n(in this case, a simple \"Loading...\" message) that will be displayed while the\nLazyComponent is loading.Improve performance in react Application\nReact.fragment => avoid extra nodes\n<div> </div> instead of div write <React.fragment> not accupy the line of space not occupy any memory\nReact.Memo => stop unnecessery re rendarings function componet\nPure component=> stop unnecessery re rendarings class componet\nHOC reusable code no need to write agai again same code same\nLazyloading => for reduce the loading time.\nuseMemo => memorized value\nuseCallback => memorized function\nminified css in js\nHOC\nHOC means higher order component input as a existing component and it will return as a new component\nWe are create one button use multiple times you can use.\nReusable purpose we can use hoc\nHoc class base component\nPortals\n- Portal is an advanced concept in react which provides a way to render child component outside of parent DOM hierarchy.\n- If any child component having modal/popup/tooltip in its JSX then its parent component's css will effect the child,s css.\n- To implement a portal in React, you use the ReactDOM.createPortal() method. This method allows you to specify the content you want to render and the target DOM element where it should be inserted.\n- Create one more div in index.html file to render child component in which modal develops.\n<div id='model-root'></div>\n- In child component JSX use the below to create portal.\n=> ReactDOM.createPortal(modal, document.getElementById(model-root))\n- By using portals, you can achieve more flexibility in rendering elements and create better user experiences when it comes to managing overlapping or out-of-flow components in React applications."
+          },
+          {
+            "question": "How does React 18 Concurrent Rendering & Automatic Batching work?",
+            "answer": "React 18 introduced Concurrent Rendering which allows React to interrupt, pause, or resume rendering tasks based on priority.\n\n**Automatic Batching:**\n- In React 17, state updates were batched only inside React event handlers.\n- In React 18, all state updates inside setTimeout, Promises, native event handlers, or async operations are automatically batched into a single re-render for better performance."
+          },
+          {
+            "question": "What are useTransition & useDeferredValue hooks in React 18?",
+            "answer": "useTransition:\n- Used to mark state updates as non-urgent transitions (e.g. filtering a long list while typing in a search bar).\n\nuseDeferredValue:\n- Used to defer updating a non-critical value until urgent updates (like input keystrokes) have finished rendering."
+          },
+          {
+            "question": "What is the Virtual DOM & Reconciliation (Fiber Architecture)?",
+            "answer": "React Fiber is the internal reconciliation engine rewritten in React 16+.\n\n**How it works:**\n1. **Virtual DOM:** In-memory lightweight copy of the real DOM.\n2. **Diffing Algorithm:** O(n) comparison between old and new VDOM trees.\n3. **Fiber Nodes:** Incremental units of work that can be paused, prioritized, or reused across frames to maintain 60 FPS smooth rendering."
+          },
+          {
+            "question": "What is Custom Hooks in React and when should you create one?",
+            "answer": "A Custom Hook is a JavaScript function whose name starts with use and can call other React hooks.\n\n**When to use:**\n- Reusing stateful logic across multiple components (e.g. useFetch, useLocalStorage, useDebounce, useWindowSize).\n- Keeping component JSX clean and separating business logic from UI presentation."
+          },
+          {
+            "question": "What is Server Components (RSC) vs Client Components in React?",
+            "answer": "Server Components (RSC):\n- Render exclusively on the server.\n- Zero bundle size sent to client, direct database access, secure credentials.\n\nClient Components:\n- Render on client (or SSR hydrated).\n- Support interactivity, state (useState, useEffect), event listeners, and browser APIs."
           }
         ]
       }
