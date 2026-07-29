@@ -119,9 +119,7 @@ export default function App() {
                 <span className={isDarkMode ? 'text-white' : 'text-neutral-900'}>Interview</span>
                 <span className="bg-gradient-to-r from-amber-400 via-pink-400 to-rose-500 bg-clip-text text-transparent drop-shadow-sm">Prep</span>
               </div>
-              <span className={`text-[9px] font-semibold tracking-widest uppercase pt-0.5 ${
-                isDarkMode ? 'text-white' : 'text-rose-600'
-              }`}>
+              <span className="text-[9px] font-semibold tracking-widest uppercase text-rose-600 dark:text-rose-400 pt-0.5">
                 by khurshidalom
               </span>
             </div>
