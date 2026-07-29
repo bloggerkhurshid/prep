@@ -115,11 +115,11 @@ export default function App() {
               <Code2 size={20} className="stroke-[2.5]" />
             </div>
             <div className="flex items-center space-x-2">
-              <span className="px-2.5 py-0.5 rounded-lg font-black text-lg sm:text-xl tracking-wider uppercase bg-gradient-to-r from-orange-500 to-amber-500 text-white shadow-md shadow-orange-500/20">
-                PREP
+              <span className="px-2.5 py-0.5 rounded-lg font-black text-base sm:text-lg tracking-wider uppercase bg-gradient-to-r from-orange-500 to-amber-500 text-white shadow-md shadow-orange-500/20">
+                INTERVIEW PREP
               </span>
               <span className="text-[9px] sm:text-[10px] font-semibold tracking-widest uppercase opacity-70 text-orange-800 dark:text-orange-300">
-                by khurshid
+                khurshidalom
               </span>
             </div>
           </h1>
