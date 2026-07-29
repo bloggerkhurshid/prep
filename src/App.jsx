@@ -1,23 +1,53 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import documentsData from './data/documents.json';
 import { 
   Search, 
   Sun, 
   Moon,
-  Flame
+  Flame,
+  Bookmark,
+  BookmarkCheck
 } from 'lucide-react';
 
 export default function App() {
   // Navigation & Dark Mode
   const [isDarkMode, setIsDarkMode] = useState(true);
 
-  // Q&A Filter & Reveal States
+  // Q&A Filter, Bookmark & Reveal States
   const [searchQuery, setSearchQuery] = useState('');
   const [categoryFilter, setCategoryFilter] = useState('All');
   const [revealedAnswers, setRevealedAnswers] = useState({});
 
+  // LocalStorage Persisted Bookmarks
+  const [bookmarks, setBookmarks] = useState(() => {
+    try {
+      const saved = localStorage.getItem('prep_bookmarks');
+      return saved ? JSON.parse(saved) : [];
+    } catch {
+      return [];
+    }
+  });
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('prep_bookmarks', JSON.stringify(bookmarks));
+    } catch (e) {
+      console.error('Failed to save bookmarks:', e);
+    }
+  }, [bookmarks]);
+
   const toggleAnswer = (key) => {
     setRevealedAnswers(prev => ({ ...prev, [key]: !prev[key] }));
+  };
+
+  const toggleBookmark = (e, qnaItem) => {
+    e.stopPropagation(); // prevent triggering answer reveal when clicking bookmark
+    const exists = bookmarks.some(bId => bId === qnaItem.id);
+    if (exists) {
+      setBookmarks(bookmarks.filter(bId => bId !== qnaItem.id));
+    } else {
+      setBookmarks([...bookmarks, qnaItem.id]);
+    }
   };
 
   // Helper to render bold text, key labels, and bullet dots on list items cleanly
@@ -73,13 +103,20 @@ export default function App() {
     )
   );
 
-  const categories = ['All', ...new Set(documentsData.map(d => d.category))];
+  const categories = ['All', 'Saved', ...new Set(documentsData.map(d => d.category))];
 
   const filteredQna = allQna.filter(item => {
-    const matchesCat = categoryFilter === 'All' || item.category === categoryFilter;
+    let matchesCat = true;
+    if (categoryFilter === 'Saved') {
+      matchesCat = bookmarks.includes(item.id);
+    } else if (categoryFilter !== 'All') {
+      matchesCat = item.category === categoryFilter;
+    }
+
     const matchesSearch = !searchQuery || 
       item.question.toLowerCase().includes(searchQuery.toLowerCase()) ||
       item.answer.toLowerCase().includes(searchQuery.toLowerCase());
+
     return matchesCat && matchesSearch;
   });
 
@@ -125,19 +162,36 @@ export default function App() {
             </div>
           </h1>
 
-          {/* Dark Mode Toggle Button */}
-          <button
-            onClick={() => setIsDarkMode(!isDarkMode)}
-            aria-label="Toggle Dark Mode"
-            className={`p-2.5 rounded-xl transition-all border ${
-              isDarkMode 
-                ? 'border-rose-500/30 bg-rose-500/10 hover:bg-rose-500/20 text-rose-400' 
-                : 'border-rose-500/20 bg-rose-500/5 hover:bg-rose-500/10 text-rose-600'
-            }`}
-            title="Toggle Theme"
-          >
-            {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}
-          </button>
+          {/* Right Header Actions: Saved Counter & Dark Mode Toggle Button */}
+          <div className="flex items-center space-x-2 sm:space-x-3 font-sans">
+            <button
+              onClick={() => setCategoryFilter(categoryFilter === 'Saved' ? 'All' : 'Saved')}
+              className={`px-3 py-1.5 rounded-xl text-xs font-semibold flex items-center space-x-1.5 transition-all border ${
+                categoryFilter === 'Saved'
+                  ? 'bg-gradient-to-r from-rose-500 to-amber-500 text-white border-transparent shadow-md shadow-rose-500/25'
+                  : (isDarkMode 
+                      ? 'border-rose-500/30 bg-rose-500/10 hover:bg-rose-500/20 text-rose-300' 
+                      : 'border-rose-500/20 bg-rose-500/5 hover:bg-rose-500/10 text-rose-700')
+              }`}
+              title="View Bookmarked Questions"
+            >
+              <Bookmark size={14} className={bookmarks.length > 0 ? 'fill-current' : ''} />
+              <span>Saved ({bookmarks.length})</span>
+            </button>
+
+            <button
+              onClick={() => setIsDarkMode(!isDarkMode)}
+              aria-label="Toggle Dark Mode"
+              className={`p-2.5 rounded-xl transition-all border ${
+                isDarkMode 
+                  ? 'border-rose-500/30 bg-rose-500/10 hover:bg-rose-500/20 text-rose-400' 
+                  : 'border-rose-500/20 bg-rose-500/5 hover:bg-rose-500/10 text-rose-600'
+              }`}
+              title="Toggle Theme"
+            >
+              {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}
+            </button>
+          </div>
 
         </div>
       </header>
@@ -172,13 +226,14 @@ export default function App() {
               <button
                 key={cat}
                 onClick={() => setCategoryFilter(cat)}
-                className={`px-3.5 py-1.5 rounded-xl text-xs transition-all whitespace-nowrap font-medium ${
+                className={`px-3.5 py-1.5 rounded-xl text-xs transition-all whitespace-nowrap font-medium flex items-center space-x-1 ${
                   categoryFilter === cat 
                     ? 'bg-gradient-to-r from-rose-500 via-pink-500 to-amber-500 text-white font-semibold shadow-md shadow-rose-500/25' 
                     : (isDarkMode ? 'bg-rose-500/10 hover:bg-rose-500/20 text-neutral-300' : 'bg-rose-500/5 hover:bg-rose-500/10 text-neutral-700')
                 }`}
               >
-                {cat}
+                {cat === 'Saved' && <Bookmark size={12} className="fill-current" />}
+                <span>{cat}</span>
               </button>
             ))}
           </div>
@@ -186,40 +241,71 @@ export default function App() {
 
         {/* Sunset Rose & Gold Cards Stream */}
         <div className="space-y-4">
-          {filteredQna.map((qnaItem) => {
-            const isRevealed = revealedAnswers[qnaItem.id];
+          {filteredQna.length === 0 ? (
+            <div className={`text-center py-16 rounded-2xl border ${
+              isDarkMode ? 'glass-card-dark text-neutral-400' : 'glass-card-light text-neutral-600'
+            }`}>
+              <Bookmark size={36} className="mx-auto mb-3 opacity-40 text-rose-500" />
+              <p className="text-sm font-medium">
+                {categoryFilter === 'Saved' 
+                  ? 'No bookmarked questions yet. Click the bookmark icon on any card to save it for quick revision!' 
+                  : 'No questions match your search query.'}
+              </p>
+            </div>
+          ) : (
+            filteredQna.map((qnaItem) => {
+              const isRevealed = revealedAnswers[qnaItem.id];
+              const isBookmarked = bookmarks.includes(qnaItem.id);
 
-            return (
-              <div 
-                key={qnaItem.id}
-                onClick={() => toggleAnswer(qnaItem.id)}
-                className={`p-5 sm:p-6 rounded-2xl transition-all duration-300 cursor-pointer ${
-                  isDarkMode 
-                    ? 'glass-card-dark hover:border-rose-500/40 hover:shadow-lg hover:shadow-rose-500/10' 
-                    : 'glass-card-light hover:border-rose-500/40 hover:shadow-md hover:shadow-rose-500/10'
-                }`}
-              >
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <span className="text-[10px] uppercase font-bold tracking-widest text-rose-600 dark:text-rose-400 opacity-90 block mb-1">
-                      {qnaItem.category} • {qnaItem.docTitle}
-                    </span>
-                    <h3 className="font-semibold text-base sm:text-lg leading-snug">
-                      {qnaItem.question}
-                    </h3>
+              return (
+                <div 
+                  key={qnaItem.id}
+                  onClick={() => toggleAnswer(qnaItem.id)}
+                  className={`p-5 sm:p-6 rounded-2xl transition-all duration-300 cursor-pointer ${
+                    isDarkMode 
+                      ? 'glass-card-dark hover:border-rose-500/40 hover:shadow-lg hover:shadow-rose-500/10' 
+                      : 'glass-card-light hover:border-rose-500/40 hover:shadow-md hover:shadow-rose-500/10'
+                  }`}
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="flex-1">
+                      <span className="text-[10px] uppercase font-bold tracking-widest text-rose-600 dark:text-rose-400 opacity-90 block mb-1">
+                        {qnaItem.category} • {qnaItem.docTitle}
+                      </span>
+                      <h3 className="font-semibold text-base sm:text-lg leading-snug">
+                        {qnaItem.question}
+                      </h3>
+                    </div>
+
+                    {/* Bookmark Toggle Button */}
+                    <button
+                      onClick={(e) => toggleBookmark(e, qnaItem)}
+                      className={`p-2 rounded-xl transition-all border shrink-0 ${
+                        isBookmarked 
+                          ? 'border-rose-500/50 bg-rose-500/20 text-rose-500' 
+                          : 'border-transparent opacity-40 hover:opacity-100 hover:bg-rose-500/10 text-neutral-400 hover:text-rose-500'
+                      }`}
+                      title={isBookmarked ? 'Remove Bookmark' : 'Save Question'}
+                    >
+                      {isBookmarked ? (
+                        <BookmarkCheck size={18} className="text-rose-500 fill-rose-500/20" />
+                      ) : (
+                        <Bookmark size={18} />
+                      )}
+                    </button>
                   </div>
+
+                  {isRevealed && (
+                    <div className={`mt-4 pt-4 border-t text-sm leading-relaxed transition-all ${
+                      isDarkMode ? 'border-rose-500/20 text-neutral-200' : 'border-rose-500/20 text-neutral-800'
+                    }`}>
+                      {renderFormattedText(qnaItem.answer)}
+                    </div>
+                  )}
                 </div>
-
-                {isRevealed && (
-                  <div className={`mt-4 pt-4 border-t text-sm leading-relaxed transition-all ${
-                    isDarkMode ? 'border-rose-500/20 text-neutral-200' : 'border-rose-500/20 text-neutral-800'
-                  }`}>
-                    {renderFormattedText(qnaItem.answer)}
-                  </div>
-                )}
-              </div>
-            );
-          })}
+              );
+            })
+          )}
         </div>
 
       </main>
