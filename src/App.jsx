@@ -90,18 +90,31 @@ export default function App() {
     });
   };
 
+  // Helper to shuffle array (Fisher-Yates)
+  const shuffleArray = (array) => {
+    const arr = [...array];
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  };
+
   // Flatten all Q&A and Document Sections into a single unified view
-  const allQna = documentsData.flatMap(doc => 
-    doc.sections.flatMap(sec => 
-      sec.qna.map((q, idx) => ({
-        id: `${doc.id}-${sec.title}-${idx}`,
-        docTitle: doc.title,
-        category: doc.category,
-        question: q.question,
-        answer: q.answer
-      }))
-    )
-  );
+  const [allQna, setAllQna] = useState(() => {
+    const raw = documentsData.flatMap(doc => 
+      doc.sections.flatMap(sec => 
+        sec.qna.map((q, idx) => ({
+          id: `${doc.id}-${sec.title}-${idx}`,
+          docTitle: doc.title,
+          category: doc.category,
+          question: q.question,
+          answer: q.answer
+        }))
+      )
+    );
+    return shuffleArray(raw);
+  });
 
   const categories = ['All', ...new Set(documentsData.map(d => d.category))];
 
@@ -225,7 +238,12 @@ export default function App() {
             {categories.map(cat => (
               <button
                 key={cat}
-                onClick={() => setCategoryFilter(cat)}
+                onClick={() => {
+                  setCategoryFilter(cat);
+                  if (cat === 'All') {
+                    setAllQna(shuffleArray(allQna));
+                  }
+                }}
                 className={`px-3.5 py-1.5 rounded-xl text-xs transition-all whitespace-nowrap font-medium flex items-center space-x-1 ${
                   categoryFilter === cat 
                     ? 'bg-gradient-to-r from-rose-500 via-pink-500 to-amber-500 text-white font-semibold shadow-md shadow-rose-500/25' 
