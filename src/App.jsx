@@ -81,7 +81,7 @@ export default function App() {
           {/* Logo / Title H1 for SEO */}
           <h1 className="flex items-center space-x-2.5 font-sans">
             <div className={`p-1.5 rounded-lg border ${
-              isDarkMode ? 'border-neutral-700 bg-neutral-900 text-white' : 'border-neutral-900 bg-black text-white'
+              isDarkMode ? 'border-neutral-200 bg-white text-black' : 'border-neutral-900 bg-black text-white'
             }`}>
               <Code2 size={20} className="stroke-[2.5]" />
             </div>
