@@ -20,12 +20,18 @@ export default function App() {
     setRevealedAnswers(prev => ({ ...prev, [key]: !prev[key] }));
   };
 
-  // Helper to render bold text & key labels cleanly in pure B&W
+  // Helper to render bold text, key labels, and bullet dots on list items cleanly
   const renderFormattedText = (text) => {
     if (!text) return null;
     const lines = text.split('\n');
     return lines.map((line, lIdx) => {
-      const parts = line.split(/(\*\*.*?\*\*|^[A-Za-z0-9\s,–-]+:|\d+\.\s+[A-Za-z0-9\s,–-]+:)/g);
+      const trimmed = line.trim();
+      
+      // Check if line is a bullet item (starts with -, *, •, or 1., 2., etc.)
+      const isBulletItem = /^(?:[-*•]|\d+\.)\s+/.test(trimmed);
+      const cleanLine = isBulletItem ? trimmed.replace(/^(?:[-*•]|\d+\.)\s+/, '') : line;
+
+      const parts = cleanLine.split(/(\*\*.*?\*\*|^[A-Za-z0-9\s,–-]+:|\d+\.\s+[A-Za-z0-9\s,–-]+:)/g);
       const renderedLine = parts.map((part, pIdx) => {
         if (!part) return null;
         if (typeof part === 'string' && part.startsWith('**') && part.endsWith('**')) {
@@ -36,6 +42,16 @@ export default function App() {
         }
         return <span key={pIdx}>{part}</span>;
       });
+
+      if (isBulletItem) {
+        return (
+          <div key={lIdx} className="flex items-start space-x-2 pl-3 my-1">
+            <span className="select-none font-bold text-sm leading-relaxed shrink-0 opacity-70">•</span>
+            <div className="flex-1">{renderedLine}</div>
+          </div>
+        );
+      }
+
       return (
         <div key={lIdx} className="min-h-[1.25rem]">
           {renderedLine}
