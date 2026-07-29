@@ -195,8 +195,8 @@ export default function App() {
             <span className="font-bold">PREP</span>
             <span className="opacity-50">BY KHURSHID</span>
           </div>
-          <p className="opacity-60">
-            Distraction-free Technical & HR Interview Guide • © {new Date().getFullYear()}
+          <p className="opacity-80">
+            Copyright © <a href="https://khurshidalom.in" target="_blank" rel="noopener noreferrer" className="underline hover:opacity-100 transition-opacity">Khurshid Alom</a>
           </p>
         </div>
       </footer>
