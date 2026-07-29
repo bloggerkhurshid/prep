@@ -738,8 +738,8 @@
             "answer": "js hoisting\njs scrict mode\nclouser\n== and ===\nTernary operator ? :"
           },
           {
-            "question": "What is callback?",
-            "answer": "Key concept covered in standard React and Web development interview prep."
+            "question": "What is a Callback Function in JavaScript?",
+            "answer": "A callback function is a function passed as an argument into another function, which is then invoked inside the outer function to complete a routine or asynchronous action."
           },
           {
             "question": "What is higher order function?",
@@ -758,24 +758,24 @@
             "answer": "Spread & rest –es6\nTemplate literals --es6\nSettimeout setintervel\nDeepcopy shallow copy\nArray methods --- es6\nAsync/await --es6\nGenerators\nCury function"
           },
           {
-            "question": "What is normal function and arrow function -es6?",
-            "answer": "Key concept covered in standard React and Web development interview prep."
+            "question": "Difference between Normal Functions and Arrow Functions in ES6?",
+            "answer": "**Key Differences:**\n1. **`this` Binding:** Normal functions have dynamic `this` bound to the caller. Arrow functions lexically bind `this` from their surrounding scope.\n2. **Constructors:** Normal functions can be called with `new` as constructors; Arrow functions cannot.\n3. **Arguments Object:** Normal functions have access to the `arguments` array object; Arrow functions do not.\n4. **Syntax:** Arrow functions provide a concise syntax with implicit returns."
           },
           {
             "question": "What is this keyword?",
             "answer": "This key word represents the current function or current object."
           },
           {
-            "question": "What is event in js?",
-            "answer": "Key concept covered in standard React and Web development interview prep."
+            "question": "What is an Event in JavaScript?",
+            "answer": "An event in JavaScript is an action or occurrence detected by the browser (such as user clicks, mouse movements, keystrokes, or page loads) that triggers an event handler routine."
           },
           {
             "question": "What is event bubling and event capturing?",
             "answer": "Local storage and session Storage"
           },
           {
-            "question": "Difference between Map foreach?",
-            "answer": "Key concept covered in standard React and Web development interview prep."
+            "question": "Difference between `map()` and `forEach()` in JavaScript?",
+            "answer": "1. **`map()`:** Returns a brand new array containing transformed elements without mutating the original array.\n2. **`forEach()`:** Iterates over array items executing a side-effect function for each item and returns `undefined`."
           },
           {
             "question": "Explain Some of es6 features?",
@@ -796,12 +796,12 @@
             "answer": "React js is a javascript library, it was developed and maintained by facebook. Mainly using the reactjs we can develop the faster web applications compare to other technologies."
           },
           {
-            "question": "How it's work react?",
-            "answer": "Key concept covered in standard React and Web development interview prep."
+            "question": "How does React work under the hood?",
+            "answer": "React uses a **Virtual DOM** (an in-memory JS representation of the real DOM). When state or props change, React creates a new Virtual DOM tree, runs the **Diffing Algorithm (Reconciliation)** to compare it against the previous tree, and efficiently patches ONLY the modified elements into the real DOM."
           },
           {
-            "question": "Difference between angular & react?",
-            "answer": "Key concept covered in standard React and Web development interview prep."
+            "question": "Difference between React and Angular?",
+            "answer": "1. **Architecture:** React is a UI library focused on the View layer; Angular is a full-featured MVC framework.\n2. **Data Binding:** React uses One-Way Data Binding; Angular uses Two-Way Data Binding.\n3. **DOM:** React uses Virtual DOM; Angular uses Real DOM.\n4. **Language:** React uses JavaScript (JSX); Angular uses TypeScript by default."
           },
           {
             "question": "What is jsx?",
@@ -824,12 +824,12 @@
             "answer": "Prop's is nothing but a when data need to pass from parent component to child component immutable child component can't change the data\nOr\nProps are a mechanism for passing data from parent component to child component. A component can't modify it's own props because they're immutable."
           },
           {
-            "question": "What dom?",
-            "answer": "Key concept covered in standard React and Web development interview prep."
+            "question": "What is the DOM (Document Object Model)?",
+            "answer": "The Document Object Model (DOM) is a programming interface for HTML and XML documents. It represents the web page as a tree structure of nodes and objects, allowing JavaScript to access and modify page content and styles dynamically."
           },
           {
-            "question": "What is virtual dom diffing algorithem?",
-            "answer": "Key concept covered in standard React and Web development interview prep."
+            "question": "What is Virtual DOM & Diffing Algorithm?",
+            "answer": "The Virtual DOM is a lightweight copy of the real DOM. When component state changes, React creates a new Virtual DOM tree and uses the **Diffing Algorithm** ($O(n)$ heuristic) to determine minimal updates, batching them into a single real DOM repaint."
           },
           {
             "question": "What is Real dom?",
@@ -844,8 +844,8 @@
             "answer": "it is an one of the method which is available in component API it is used to update this.state objectby default setState method it follows asynchronous method"
           },
           {
-            "question": "How many ways we can pass data from one component to another component?",
-            "answer": "Key concept covered in standard React and Web development interview prep."
+            "question": "Ways to pass data between React components?",
+            "answer": "1. **Parent to Child:** Props.\n2. **Child to Parent:** Callback functions passed as props.\n3. **Any Component to Any Component:** React Context API or Global State Management (Redux, Zustand)."
           },
           {
             "question": "What is constructor?",
@@ -888,12 +888,12 @@
             "answer": "Axios\nFetch\n1.Need to install 3rd party libraries npm i axios\n1.No need to install any 3rd party libraries\n2.No need to convert the data in JSON format\n2.Need to convert the data in JSON format\n3.we can able to easily handle the Errors in Axios\n3.it is very difficult to handle the Errors in Fetch"
           },
           {
-            "question": "What is hooks?",
-            "answer": "Key concept covered in standard React and Web development interview prep."
+            "question": "What are React Hooks?",
+            "answer": "React Hooks are built-in functions introduced in React 16.8 that allow functional components to use state, lifecycle features, context, and refs without writing class components."
           },
           {
-            "question": "Explain in your working hooks?",
-            "answer": "Key concept covered in standard React and Web development interview prep."
+            "question": "Which React Hooks do you commonly use in projects?",
+            "answer": "Commonly used hooks include:\n- `useState`: Component local state management.\n- `useEffect`: Handling side-effects & network calls.\n- `useRef`: Accessing DOM nodes & persisting mutable variables.\n- `useMemo` & `useCallback`: Performance optimization by memoizing values and callback references."
           },
           {
             "question": "What is pure component?",
@@ -904,20 +904,20 @@
             "answer": "React.memo is used in only Function based component. To stop the Unnecessary Re-rendering Ex:- I have one parent component inside some child components once parent component state is updated inside child components also Re-render need to avoid that Re-rendering we can go for React.memo\nEx :- export default React.memo (<About/>)\nCustom component\nCustom component is a special component it take input as a existing component return as a new component."
           },
           {
-            "question": "Difference between usememo and useCallback?",
-            "answer": "Key concept covered in standard React and Web development interview prep."
+            "question": "Difference between `useMemo` and `useCallback`?",
+            "answer": "1. **`useMemo`:** Memoizes and returns the **computed value** of a function result (`useMemo(() => computeValue(a, b), [a, b])`).\n2. **`useCallback`:** Memoizes and returns the **function instance** itself (`useCallback(() => handleClick(), [deps])`) to prevent unnecessary child re-renders."
           },
           {
             "question": "What is higher order component (HOC)?",
             "answer": "Higher order component is a special component it take input as a existing component return as a new component.\nMailny using the Reusable purpose. This is classbase component\nimport React from 'react';\nconst withLogger = (WrappedComponent) => {\nclass WithLogger extends React.Component {\ncomponentDidMount() {\nconsole.log('Component mounted');\n}\ncomponentWillUnmount() {\nconsole.log('Component unmounted');\n}\nrender() {\nreturn <WrappedComponent {...this.props} />;\n}\n}\nreturn WithLogger;\n};\n// Usage\nclass MyComponent extends React.Component {\nrender() {\nreturn <div>Hello, World!</div>;\n}\n}\nconst MyComponentWithLogger = withLogger(MyComponent);\nexport default MyComponentWithLogger;"
           },
           {
-            "question": "Explain the useEffect?",
-            "answer": "Redux"
+            "question": "What is useEffect & How does it work?",
+            "answer": "useEffect is a core React Hook used to manage side effects in functional components (such as data fetching, subscriptions, DOM manipulation, and timers).\n\n**Usage & Dependency Behaviors:**\n1. **No Dependency Array (`useEffect(() => {})`):** Runs after initial render and after EVERY single component re-render.\n2. **Empty Dependency Array (`useEffect(() => {}, [])`):** Runs ONLY ONCE after the initial component mount (equivalent to `componentDidMount`).\n3. **With Dependencies (`useEffect(() => {}, [count])`):** Runs after mount and whenever any specified dependency variable changes (equivalent to `componentDidUpdate`).\n4. **Cleanup Function (`useEffect(() => { return () => cleanup(); }, [])`):** Returned function executes before unmounting or before re-running the effect (equivalent to `componentWillUnmount`)."
           },
           {
-            "question": "What is Redux?",
-            "answer": "Redux is a predictable state container for JavaScript apps.\n\n**Core Principles:**\n1. Single source of truth (Store)\n2. State is read-only (Actions)\n3. Changes made with pure functions (Reducers)"
+            "question": "What is Redux & Redux Architecture?",
+            "answer": "Redux is a predictable state container and state management architecture for JavaScript applications, maintaining a centralized global store.\n\n**3 Core Principles:**\n1. **Single Source of Truth:** The state of your entire application is stored in an object tree within a single Redux Store.\n2. **State is Read-Only:** The only way to change the state is to emit an `Action` (an object describing what happened).\n3. **Changes are made with Pure Functions:** `Reducers` are pure functions that accept the previous state and an action, returning a brand new state.\n\n**Data Flow:** Action -> Dispatch -> Reducer -> Store -> View Update."
           },
           {
             "question": "Explain Redux Workflow?",
