@@ -159,20 +159,31 @@ export default function App() {
           isDarkMode ? 'glass-panel-dark' : 'glass-panel-light'
         }`}>
           
-          {/* Logo / Title H1 for SEO */}
-          <h1 className="flex items-center space-x-3 font-sans">
-            <div className="p-2 rounded-xl border border-rose-400/30 bg-gradient-to-br from-rose-500 via-pink-500 to-amber-500 text-white shadow-lg shadow-rose-500/25">
-              <Flame size={22} className="fill-amber-300/30 stroke-[2.2]" />
-            </div>
-            <div className="flex flex-col">
-              <div className="flex items-center space-x-1.5 font-extrabold text-base sm:text-lg tracking-tight uppercase leading-none">
-                <span className={isDarkMode ? 'text-white' : 'text-neutral-900'}>Interview</span>
-                <span className="bg-gradient-to-r from-amber-400 via-pink-400 to-rose-500 bg-clip-text text-transparent drop-shadow-sm">Prep</span>
+          {/* Logo / Title H1 for SEO with Home reset action */}
+          <h1 className="font-sans">
+            <button 
+              onClick={() => {
+                setCategoryFilter('All');
+                setSearchQuery('');
+                setAllQna(shuffleArray(allQna));
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className="flex items-center space-x-3 text-left focus:outline-none group cursor-pointer"
+              title="Return to Home"
+            >
+              <div className="p-2 rounded-xl border border-rose-400/30 bg-gradient-to-br from-rose-500 via-pink-500 to-amber-500 text-white shadow-lg shadow-rose-500/25 group-hover:scale-105 transition-transform duration-200">
+                <Flame size={22} className="fill-amber-300/30 stroke-[2.2]" />
               </div>
-              <span className="text-[9px] font-semibold tracking-widest uppercase text-rose-600 dark:text-rose-400 pt-0.5">
-                by khurshidalom
-              </span>
-            </div>
+              <div className="flex flex-col">
+                <div className="flex items-center space-x-1.5 font-extrabold text-base sm:text-lg tracking-tight uppercase leading-none">
+                  <span className={isDarkMode ? 'text-white' : 'text-neutral-900'}>Interview</span>
+                  <span className="bg-gradient-to-r from-amber-400 via-pink-400 to-rose-500 bg-clip-text text-transparent drop-shadow-sm">Prep</span>
+                </div>
+                <span className="text-[9px] font-semibold tracking-widest uppercase text-rose-600 dark:text-rose-400 pt-0.5 opacity-80 group-hover:opacity-100 transition-opacity">
+                  by khurshidalom
+                </span>
+              </div>
+            </button>
           </h1>
 
           {/* Right Header Actions: Saved Counter & Dark Mode Toggle Button */}
