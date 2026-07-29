@@ -118,7 +118,7 @@ export default function App() {
               <span className="font-extrabold text-base sm:text-lg tracking-tight uppercase leading-none text-neutral-900 dark:text-neutral-100">
                 Interview <span className="bg-gradient-to-r from-rose-400 via-pink-400 to-amber-400 bg-clip-text text-transparent drop-shadow-sm">Prep</span>
               </span>
-              <span className="text-[9px] font-semibold tracking-widest uppercase opacity-70 text-rose-600 dark:text-rose-400 pt-0.5">
+              <span className="text-[9px] font-semibold tracking-widest uppercase text-rose-600 dark:text-white pt-0.5">
                 by khurshidalom
               </span>
             </div>
@@ -232,10 +232,10 @@ export default function App() {
             <span className="px-2 py-0.5 rounded text-[10px] font-black bg-gradient-to-r from-rose-500 to-amber-500 text-white">
               PREP
             </span>
-            <span className="text-[10px] opacity-70 text-rose-600 dark:text-rose-400 font-semibold">BY KHURSHID</span>
+            <span className="text-[10px] text-rose-600 dark:text-white font-semibold">BY KHURSHID</span>
           </div>
-          <p className="opacity-80">
-            Copyright © <a href="https://khurshidalom.in" target="_blank" rel="noopener noreferrer" className="underline hover:opacity-100 transition-opacity font-medium text-rose-600 dark:text-rose-400">Khurshid Alom</a>
+          <p className="text-neutral-600 dark:text-neutral-300">
+            Copyright © <a href="https://khurshidalom.in" target="_blank" rel="noopener noreferrer" className="underline font-bold text-rose-600 dark:text-white">Khurshid Alom</a>
           </p>
         </div>
       </footer>
